@@ -1,0 +1,25 @@
+# Local settings and generated Python files
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+
+# Local launch shortcuts
+/*.command
+
+# Intermediate logs; keep the final test run
+results/*.log
+!results/tests-final.log
+results/main-count-*.txt
+report/render*/
+report/*.log
+
+# Internal planning notes, retained locally
+/docs/Проект.md
+/docs/План реализации.md
+/docs/Ход работы.md
+
+# Assignment handout, retained locally
+/Методичка*.docx

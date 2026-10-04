@@ -1,0 +1,8 @@
+{
+  "cpu": "Apple M3 Pro",
+  "memory_bytes": 19327352832,
+  "os": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6.2\nBuildVersion:\t\t25G83\n",
+  "docker": "27.5.1",
+  "docker_resources": "11 CPUs; 8217432064 bytes",
+  "other_containers": "На протяжении серий запущены также portal-06-api, portal-06-weather и portal-06-db; нагрузка на них не создавалась. Результаты относятся к общему локальному Docker-стенду."
+}

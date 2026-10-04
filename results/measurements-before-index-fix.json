@@ -1,0 +1,6087 @@
+{
+  "metadata": {
+    "account": "demo",
+    "warmup": 5,
+    "repeats": 30,
+    "p95_method": "nearest rank",
+    "database": "evgenii_nevokshenov_measure",
+    "python": "3.12.10",
+    "platform": "Linux-6.12.5-linuxkit-aarch64-with-glibc2.36",
+    "started_at": "2026-10-04T16:33:14.300439+03:00",
+    "sql_method": "Client execute + fetchall; includes transfer/decode, excludes opening connection and commit",
+    "server_method": "ASGI middleware wall time; code = server - SQL; HTTP includes full receive",
+    "pip_freeze": [
+      "annotated-types==0.8.0",
+      "anyio==4.9.0",
+      "certifi==2026.7.22",
+      "click==8.5.0",
+      "fastapi==0.115.12",
+      "h11==0.16.0",
+      "httpcore==1.0.9",
+      "httpx==0.28.1",
+      "idna==3.20",
+      "iniconfig==2.3.0",
+      "packaging==26.3",
+      "pluggy==1.6.0",
+      "psycopg==3.2.9",
+      "psycopg-binary==3.2.9",
+      "pydantic==2.13.5",
+      "pydantic_core==2.46.5",
+      "pytest==8.3.5",
+      "sniffio==1.3.1",
+      "starlette==0.46.2",
+      "typing-inspection==0.4.4",
+      "typing_extensions==4.16.0",
+      "uvicorn==0.34.2"
+    ],
+    "postgres": "PostgreSQL 16.15 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit"
+  },
+  "datasets": {
+    "small": {
+      "counts": {
+        "specialists": 10,
+        "services": 10,
+        "slots": 500,
+        "appointments": 300
+      },
+      "fingerprint": {
+        "specialists": "7d047082248b17c7b6426bc55d4e5111",
+        "services": "425db6b4039a7bce774e5017da08094c",
+        "slots": "77927ac3a20e7994442bcb728faf0f8f",
+        "appointments": "a3f26ba51b566d1ce433d89a3a9b8d98"
+      },
+      "reproduced": true,
+      "final_counts": {
+        "specialists": 10,
+        "services": 10,
+        "slots": 570,
+        "appointments": 370
+      },
+      "write_fixture": {
+        "added_slots": 70,
+        "prepared_appointments": 35,
+        "created_during_warmup": 5,
+        "created_during_series": 30,
+        "cancelled_during_warmup": 5,
+        "cancelled_during_series": 30
+      },
+      "operations": {
+        "login": {
+          "method": "POST",
+          "path": "/api/login",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 34.82199999962177,
+              "server_ms": 34.07,
+              "sql_ms": 0.919,
+              "code_ms": 33.151,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 27.134499999192485,
+              "server_ms": 26.354,
+              "sql_ms": 0.77,
+              "code_ms": 25.584,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 25.778625000384636,
+              "server_ms": 25.198,
+              "sql_ms": 0.722,
+              "code_ms": 24.476,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 25.758249999853433,
+              "server_ms": 25.198,
+              "sql_ms": 0.796,
+              "code_ms": 24.402,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 27.720957999918028,
+              "server_ms": 26.638,
+              "sql_ms": 0.859,
+              "code_ms": 25.779000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 34.627500000169675,
+              "server_ms": 33.751,
+              "sql_ms": 0.924,
+              "code_ms": 32.827,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.428000000123575,
+              "server_ms": 25.788,
+              "sql_ms": 0.83,
+              "code_ms": 24.958000000000002,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 27.154708000125538,
+              "server_ms": 26.495,
+              "sql_ms": 0.744,
+              "code_ms": 25.751,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 25.639333999606606,
+              "server_ms": 25.135,
+              "sql_ms": 0.724,
+              "code_ms": 24.411,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.9192080004359,
+              "server_ms": 26.394,
+              "sql_ms": 0.754,
+              "code_ms": 25.639999999999997,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 31.35870900041482,
+              "server_ms": 30.796,
+              "sql_ms": 0.746,
+              "code_ms": 30.05,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.376166999398265,
+              "server_ms": 25.76,
+              "sql_ms": 0.782,
+              "code_ms": 24.978,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 27.737708000131533,
+              "server_ms": 27.103,
+              "sql_ms": 0.81,
+              "code_ms": 26.293000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 27.152458000273327,
+              "server_ms": 26.6,
+              "sql_ms": 0.796,
+              "code_ms": 25.804000000000002,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.57287500005623,
+              "server_ms": 26.087,
+              "sql_ms": 0.701,
+              "code_ms": 25.386,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.5842499993596,
+              "server_ms": 26.044,
+              "sql_ms": 0.704,
+              "code_ms": 25.34,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 25.284833000114304,
+              "server_ms": 24.754,
+              "sql_ms": 0.653,
+              "code_ms": 24.101000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.940374999867345,
+              "server_ms": 26.404,
+              "sql_ms": 0.727,
+              "code_ms": 25.677,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.727333000053477,
+              "server_ms": 26.204,
+              "sql_ms": 0.766,
+              "code_ms": 25.438000000000002,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.742332999674545,
+              "server_ms": 26.243,
+              "sql_ms": 0.739,
+              "code_ms": 25.503999999999998,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 25.27974999975413,
+              "server_ms": 24.816,
+              "sql_ms": 0.669,
+              "code_ms": 24.147,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.4381670003786,
+              "server_ms": 25.958,
+              "sql_ms": 0.737,
+              "code_ms": 25.221,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.678207999793813,
+              "server_ms": 26.165,
+              "sql_ms": 0.742,
+              "code_ms": 25.423,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.747625000098196,
+              "server_ms": 26.262,
+              "sql_ms": 0.74,
+              "code_ms": 25.522000000000002,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 25.45800000007148,
+              "server_ms": 24.888,
+              "sql_ms": 0.699,
+              "code_ms": 24.189,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.460832999873674,
+              "server_ms": 25.952,
+              "sql_ms": 0.738,
+              "code_ms": 25.214000000000002,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 27.390290999392164,
+              "server_ms": 26.639,
+              "sql_ms": 0.93,
+              "code_ms": 25.709,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 27.646125000501343,
+              "server_ms": 26.801,
+              "sql_ms": 1.109,
+              "code_ms": 25.692,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 27.521250000063446,
+              "server_ms": 26.573,
+              "sql_ms": 1.044,
+              "code_ms": 25.529,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.90370799973607,
+              "server_ms": 26.213,
+              "sql_ms": 1.053,
+              "code_ms": 25.16,
+              "queries": 2,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 26.74497899988637,
+            "p95": 34.627500000169675,
+            "max": 34.82199999962177
+          },
+          "server_ms": {
+            "p50": 26.228,
+            "p95": 33.751,
+            "max": 34.07
+          },
+          "sql_ms": {
+            "p50": 0.75,
+            "p95": 1.053,
+            "max": 1.109
+          },
+          "code_ms": {
+            "p50": 25.471,
+            "p95": 32.827,
+            "max": 33.151
+          },
+          "queries": {
+            "p50": 2.0,
+            "p95": 2,
+            "max": 2
+          }
+        },
+        "logout": {
+          "method": "POST",
+          "path": "/api/logout",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 5.281957999613951,
+              "server_ms": 4.649,
+              "sql_ms": 0.917,
+              "code_ms": 3.732,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.903666999780398,
+              "server_ms": 4.333,
+              "sql_ms": 0.891,
+              "code_ms": 3.442,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.712707999715349,
+              "server_ms": 4.238,
+              "sql_ms": 0.816,
+              "code_ms": 3.4220000000000006,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.516582999713137,
+              "server_ms": 4.038,
+              "sql_ms": 0.83,
+              "code_ms": 3.208,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.510374999881606,
+              "server_ms": 4.055,
+              "sql_ms": 0.825,
+              "code_ms": 3.2299999999999995,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.556125000817701,
+              "server_ms": 4.092,
+              "sql_ms": 0.812,
+              "code_ms": 3.2799999999999994,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.708792000201356,
+              "server_ms": 4.251,
+              "sql_ms": 0.872,
+              "code_ms": 3.3790000000000004,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.45520800005761,
+              "server_ms": 4.78,
+              "sql_ms": 0.96,
+              "code_ms": 3.8200000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.802708000170242,
+              "server_ms": 4.236,
+              "sql_ms": 0.84,
+              "code_ms": 3.396,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.752415999973891,
+              "server_ms": 4.28,
+              "sql_ms": 0.842,
+              "code_ms": 3.438,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.492125000069791,
+              "server_ms": 3.993,
+              "sql_ms": 0.734,
+              "code_ms": 3.259,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.646625000532367,
+              "server_ms": 4.164,
+              "sql_ms": 0.83,
+              "code_ms": 3.3339999999999996,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.727208000076644,
+              "server_ms": 4.213,
+              "sql_ms": 0.871,
+              "code_ms": 3.342,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.027832999985549,
+              "server_ms": 4.464,
+              "sql_ms": 0.842,
+              "code_ms": 3.6220000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.557375000331376,
+              "server_ms": 4.109,
+              "sql_ms": 0.824,
+              "code_ms": 3.285,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.952541999955429,
+              "server_ms": 4.415,
+              "sql_ms": 0.928,
+              "code_ms": 3.487,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.930707999847073,
+              "server_ms": 4.221,
+              "sql_ms": 0.829,
+              "code_ms": 3.3920000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.786333000083687,
+              "server_ms": 4.212,
+              "sql_ms": 0.882,
+              "code_ms": 3.3299999999999996,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.541125000287138,
+              "server_ms": 4.061,
+              "sql_ms": 0.791,
+              "code_ms": 3.27,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.923624999719323,
+              "server_ms": 4.405,
+              "sql_ms": 0.938,
+              "code_ms": 3.4670000000000005,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.83604200053378,
+              "server_ms": 4.27,
+              "sql_ms": 0.83,
+              "code_ms": 3.4399999999999995,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.057166999904439,
+              "server_ms": 4.509,
+              "sql_ms": 0.875,
+              "code_ms": 3.6340000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 7.810291000168945,
+              "server_ms": 6.95,
+              "sql_ms": 1.097,
+              "code_ms": 5.853,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.355375000362983,
+              "server_ms": 4.752,
+              "sql_ms": 0.944,
+              "code_ms": 3.808,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.183874999602267,
+              "server_ms": 4.576,
+              "sql_ms": 0.903,
+              "code_ms": 3.6729999999999996,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.737833000035607,
+              "server_ms": 4.17,
+              "sql_ms": 0.823,
+              "code_ms": 3.347,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.328334000296309,
+              "server_ms": 4.717,
+              "sql_ms": 0.928,
+              "code_ms": 3.7889999999999997,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.171583000446844,
+              "server_ms": 4.499,
+              "sql_ms": 0.921,
+              "code_ms": 3.5779999999999994,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.614583999682509,
+              "server_ms": 4.135,
+              "sql_ms": 0.81,
+              "code_ms": 3.3249999999999997,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.540040999927442,
+              "server_ms": 4.059,
+              "sql_ms": 0.798,
+              "code_ms": 3.261,
+              "queries": 2,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 4.794520500126964,
+            "p95": 5.45520800005761,
+            "max": 7.810291000168945
+          },
+          "server_ms": {
+            "p50": 4.2445,
+            "p95": 4.78,
+            "max": 6.95
+          },
+          "sql_ms": {
+            "p50": 0.842,
+            "p95": 0.96,
+            "max": 1.097
+          },
+          "code_ms": {
+            "p50": 3.4090000000000003,
+            "p95": 3.8200000000000003,
+            "max": 5.853
+          },
+          "queries": {
+            "p50": 2.0,
+            "p95": 2,
+            "max": 2
+          }
+        },
+        "me": {
+          "method": "GET",
+          "path": "/api/me",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 5.403291999755311,
+              "server_ms": 4.813,
+              "sql_ms": 0.78,
+              "code_ms": 4.0329999999999995,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.705541000475932,
+              "server_ms": 4.229,
+              "sql_ms": 0.834,
+              "code_ms": 3.395,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.5179580001786235,
+              "server_ms": 4.063,
+              "sql_ms": 0.753,
+              "code_ms": 3.3099999999999996,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 5.214708000494284,
+              "server_ms": 4.607,
+              "sql_ms": 1.081,
+              "code_ms": 3.5260000000000002,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 6.266749999667809,
+              "server_ms": 5.646,
+              "sql_ms": 1.189,
+              "code_ms": 4.457,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 6.02970800082403,
+              "server_ms": 5.374,
+              "sql_ms": 1.196,
+              "code_ms": 4.178,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 5.2859999996144325,
+              "server_ms": 4.685,
+              "sql_ms": 0.868,
+              "code_ms": 3.8169999999999997,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 5.148999999619264,
+              "server_ms": 4.519,
+              "sql_ms": 0.801,
+              "code_ms": 3.718,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 6.019250000463217,
+              "server_ms": 5.398,
+              "sql_ms": 0.857,
+              "code_ms": 4.5409999999999995,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 5.349707999812381,
+              "server_ms": 4.762,
+              "sql_ms": 0.985,
+              "code_ms": 3.7769999999999997,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 5.083542000647867,
+              "server_ms": 4.564,
+              "sql_ms": 0.882,
+              "code_ms": 3.682,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.971375000422995,
+              "server_ms": 4.382,
+              "sql_ms": 0.814,
+              "code_ms": 3.5679999999999996,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 5.3161669993642136,
+              "server_ms": 4.786,
+              "sql_ms": 0.931,
+              "code_ms": 3.8549999999999995,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 6.290667000030226,
+              "server_ms": 5.679,
+              "sql_ms": 1.548,
+              "code_ms": 4.131,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 5.294374999721185,
+              "server_ms": 4.676,
+              "sql_ms": 0.867,
+              "code_ms": 3.809,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.967832999682287,
+              "server_ms": 4.432,
+              "sql_ms": 0.856,
+              "code_ms": 3.5760000000000005,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.706875000010768,
+              "server_ms": 4.226,
+              "sql_ms": 0.766,
+              "code_ms": 3.46,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.7222499997587875,
+              "server_ms": 4.249,
+              "sql_ms": 0.801,
+              "code_ms": 3.4479999999999995,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.804791999958979,
+              "server_ms": 4.315,
+              "sql_ms": 0.846,
+              "code_ms": 3.4690000000000003,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.65008300034242,
+              "server_ms": 4.132,
+              "sql_ms": 0.765,
+              "code_ms": 3.3669999999999995,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.648625000299944,
+              "server_ms": 4.213,
+              "sql_ms": 0.789,
+              "code_ms": 3.424,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.952666999997746,
+              "server_ms": 4.455,
+              "sql_ms": 0.858,
+              "code_ms": 3.597,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.838750000089931,
+              "server_ms": 4.339,
+              "sql_ms": 0.838,
+              "code_ms": 3.5010000000000003,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.804000000149244,
+              "server_ms": 4.271,
+              "sql_ms": 0.766,
+              "code_ms": 3.505,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.739834000247356,
+              "server_ms": 4.237,
+              "sql_ms": 0.788,
+              "code_ms": 3.449,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.762957999446371,
+              "server_ms": 4.227,
+              "sql_ms": 0.814,
+              "code_ms": 3.4130000000000003,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.839207999793871,
+              "server_ms": 4.353,
+              "sql_ms": 0.801,
+              "code_ms": 3.5519999999999996,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.495167000641231,
+              "server_ms": 4.034,
+              "sql_ms": 0.735,
+              "code_ms": 3.299,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 5.115459000080591,
+              "server_ms": 4.58,
+              "sql_ms": 0.889,
+              "code_ms": 3.691,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 5.983207999634033,
+              "server_ms": 5.368,
+              "sql_ms": 1.247,
+              "code_ms": 4.121,
+              "queries": 1,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 4.969604000052641,
+            "p95": 6.266749999667809,
+            "max": 6.290667000030226
+          },
+          "server_ms": {
+            "p50": 4.4435,
+            "p95": 5.646,
+            "max": 5.679
+          },
+          "sql_ms": {
+            "p50": 0.842,
+            "p95": 1.247,
+            "max": 1.548
+          },
+          "code_ms": {
+            "p50": 3.572,
+            "p95": 4.457,
+            "max": 4.5409999999999995
+          },
+          "queries": {
+            "p50": 1.0,
+            "p95": 1,
+            "max": 1
+          }
+        },
+        "services": {
+          "method": "GET",
+          "path": "/api/services",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 4.306541999540059,
+              "server_ms": 3.924,
+              "sql_ms": 0.842,
+              "code_ms": 3.082,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.455290999430872,
+              "server_ms": 4.047,
+              "sql_ms": 0.902,
+              "code_ms": 3.1449999999999996,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.524832999777573,
+              "server_ms": 4.105,
+              "sql_ms": 0.868,
+              "code_ms": 3.2370000000000005,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.445583000233455,
+              "server_ms": 4.021,
+              "sql_ms": 0.882,
+              "code_ms": 3.139,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.443542000444722,
+              "server_ms": 4.055,
+              "sql_ms": 0.918,
+              "code_ms": 3.1369999999999996,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.348790999756602,
+              "server_ms": 3.985,
+              "sql_ms": 0.879,
+              "code_ms": 3.106,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.4187500006955815,
+              "server_ms": 3.991,
+              "sql_ms": 0.88,
+              "code_ms": 3.111,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.485916999328765,
+              "server_ms": 4.073,
+              "sql_ms": 0.912,
+              "code_ms": 3.1610000000000005,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.432249999808846,
+              "server_ms": 4.044,
+              "sql_ms": 0.913,
+              "code_ms": 3.1309999999999993,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.348915999798919,
+              "server_ms": 3.991,
+              "sql_ms": 0.87,
+              "code_ms": 3.121,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.52816699998948,
+              "server_ms": 4.121,
+              "sql_ms": 0.89,
+              "code_ms": 3.2310000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.42916699921625,
+              "server_ms": 4.043,
+              "sql_ms": 0.892,
+              "code_ms": 3.1510000000000002,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.44241700006387,
+              "server_ms": 4.037,
+              "sql_ms": 0.891,
+              "code_ms": 3.146,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.605750000337139,
+              "server_ms": 4.125,
+              "sql_ms": 0.967,
+              "code_ms": 3.158,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.493749999710417,
+              "server_ms": 4.07,
+              "sql_ms": 0.898,
+              "code_ms": 3.172,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.466249999495631,
+              "server_ms": 4.07,
+              "sql_ms": 0.897,
+              "code_ms": 3.173,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.480208999666502,
+              "server_ms": 4.08,
+              "sql_ms": 0.904,
+              "code_ms": 3.176,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.42741599999863,
+              "server_ms": 4.03,
+              "sql_ms": 0.863,
+              "code_ms": 3.1670000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.390916000375,
+              "server_ms": 4.018,
+              "sql_ms": 0.867,
+              "code_ms": 3.151,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.467624999961117,
+              "server_ms": 4.062,
+              "sql_ms": 0.871,
+              "code_ms": 3.1910000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.753082999741309,
+              "server_ms": 4.037,
+              "sql_ms": 0.911,
+              "code_ms": 3.126,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.522457999883045,
+              "server_ms": 4.108,
+              "sql_ms": 0.956,
+              "code_ms": 3.1519999999999997,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.441916999894602,
+              "server_ms": 4.036,
+              "sql_ms": 0.905,
+              "code_ms": 3.1309999999999993,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.53570799982117,
+              "server_ms": 4.139,
+              "sql_ms": 0.986,
+              "code_ms": 3.1530000000000005,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.538707999927283,
+              "server_ms": 4.154,
+              "sql_ms": 0.948,
+              "code_ms": 3.206,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.5115419998182915,
+              "server_ms": 4.077,
+              "sql_ms": 0.897,
+              "code_ms": 3.1799999999999997,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.632959000446135,
+              "server_ms": 4.201,
+              "sql_ms": 0.948,
+              "code_ms": 3.2529999999999997,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.6066250001313165,
+              "server_ms": 6.013,
+              "sql_ms": 1.468,
+              "code_ms": 4.545,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.88408299972798,
+              "server_ms": 5.186,
+              "sql_ms": 1.097,
+              "code_ms": 4.089,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.9258339995503775,
+              "server_ms": 4.399,
+              "sql_ms": 0.945,
+              "code_ms": 3.454,
+              "queries": 2,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 4.4739169998138095,
+            "p95": 5.88408299972798,
+            "max": 6.6066250001313165
+          },
+          "server_ms": {
+            "p50": 4.066000000000001,
+            "p95": 5.186,
+            "max": 6.013
+          },
+          "sql_ms": {
+            "p50": 0.9,
+            "p95": 1.097,
+            "max": 1.468
+          },
+          "code_ms": {
+            "p50": 3.1555,
+            "p95": 4.089,
+            "max": 4.545
+          },
+          "queries": {
+            "p50": 2.0,
+            "p95": 2,
+            "max": 2
+          }
+        },
+        "specialists": {
+          "method": "GET",
+          "path": "/api/specialists",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 5.056209000031231,
+              "server_ms": 4.579,
+              "sql_ms": 1.061,
+              "code_ms": 3.518,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.130167000061192,
+              "server_ms": 4.53,
+              "sql_ms": 1.044,
+              "code_ms": 3.486,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.959290999977384,
+              "server_ms": 4.436,
+              "sql_ms": 0.969,
+              "code_ms": 3.467,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.97420899955614,
+              "server_ms": 4.504,
+              "sql_ms": 1.034,
+              "code_ms": 3.4699999999999998,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.01516599979368,
+              "server_ms": 4.553,
+              "sql_ms": 1.011,
+              "code_ms": 3.542,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.133833999934723,
+              "server_ms": 4.611,
+              "sql_ms": 1.111,
+              "code_ms": 3.5,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.1718750000873115,
+              "server_ms": 4.601,
+              "sql_ms": 1.075,
+              "code_ms": 3.526,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.8110829995712265,
+              "server_ms": 5.179,
+              "sql_ms": 1.061,
+              "code_ms": 4.118,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.360083000596205,
+              "server_ms": 4.654,
+              "sql_ms": 1.109,
+              "code_ms": 3.545,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.908083999907831,
+              "server_ms": 4.384,
+              "sql_ms": 0.941,
+              "code_ms": 3.4430000000000005,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.691916000410856,
+              "server_ms": 4.191,
+              "sql_ms": 0.923,
+              "code_ms": 3.268,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.847291999998561,
+              "server_ms": 5.267,
+              "sql_ms": 1.28,
+              "code_ms": 3.987,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.04670900045312,
+              "server_ms": 4.517,
+              "sql_ms": 0.99,
+              "code_ms": 3.527,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.475457999637001,
+              "server_ms": 4.945,
+              "sql_ms": 1.138,
+              "code_ms": 3.8070000000000004,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.068041999948036,
+              "server_ms": 4.527,
+              "sql_ms": 0.995,
+              "code_ms": 3.532,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.8023750005086185,
+              "server_ms": 4.351,
+              "sql_ms": 0.896,
+              "code_ms": 3.455,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.472665999855963,
+              "server_ms": 4.035,
+              "sql_ms": 0.874,
+              "code_ms": 3.161,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.56233400018391,
+              "server_ms": 4.077,
+              "sql_ms": 0.893,
+              "code_ms": 3.184,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.441875000338769,
+              "server_ms": 4.037,
+              "sql_ms": 0.857,
+              "code_ms": 3.1799999999999997,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.454832999726932,
+              "server_ms": 4.042,
+              "sql_ms": 0.879,
+              "code_ms": 3.163,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.358709000371164,
+              "server_ms": 3.987,
+              "sql_ms": 0.849,
+              "code_ms": 3.138,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.354292000243731,
+              "server_ms": 3.973,
+              "sql_ms": 0.865,
+              "code_ms": 3.1079999999999997,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.463000000214379,
+              "server_ms": 4.101,
+              "sql_ms": 0.926,
+              "code_ms": 3.175,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.453084000488161,
+              "server_ms": 4.08,
+              "sql_ms": 0.865,
+              "code_ms": 3.215,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.494540999985475,
+              "server_ms": 4.093,
+              "sql_ms": 0.895,
+              "code_ms": 3.198,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.534542000328656,
+              "server_ms": 4.103,
+              "sql_ms": 0.872,
+              "code_ms": 3.231,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.58991700088518,
+              "server_ms": 4.157,
+              "sql_ms": 0.905,
+              "code_ms": 3.252,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.567291000057594,
+              "server_ms": 4.102,
+              "sql_ms": 0.883,
+              "code_ms": 3.2190000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.463500000383647,
+              "server_ms": 4.025,
+              "sql_ms": 0.871,
+              "code_ms": 3.1540000000000004,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.517792000115151,
+              "server_ms": 4.091,
+              "sql_ms": 0.892,
+              "code_ms": 3.1990000000000003,
+              "queries": 2,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 4.747145500459737,
+            "p95": 5.8110829995712265,
+            "max": 5.847291999998561
+          },
+          "server_ms": {
+            "p50": 4.271,
+            "p95": 5.179,
+            "max": 5.267
+          },
+          "sql_ms": {
+            "p50": 0.9245000000000001,
+            "p95": 1.138,
+            "max": 1.28
+          },
+          "code_ms": {
+            "p50": 3.3555,
+            "p95": 3.987,
+            "max": 4.118
+          },
+          "queries": {
+            "p50": 2.0,
+            "p95": 2,
+            "max": 2
+          }
+        },
+        "list": {
+          "method": "GET",
+          "path": "/api/appointments?page=1&size=20",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 6.262375000005704,
+              "server_ms": 5.755,
+              "sql_ms": 2.083,
+              "code_ms": 3.6719999999999997,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.046167000022251,
+              "server_ms": 5.612,
+              "sql_ms": 1.959,
+              "code_ms": 3.653,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.114874999184394,
+              "server_ms": 5.716,
+              "sql_ms": 1.916,
+              "code_ms": 3.8000000000000003,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 5.90804199964623,
+              "server_ms": 5.515,
+              "sql_ms": 1.967,
+              "code_ms": 3.5479999999999996,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.104959000367671,
+              "server_ms": 5.674,
+              "sql_ms": 2.046,
+              "code_ms": 3.6280000000000006,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.124583000200801,
+              "server_ms": 5.666,
+              "sql_ms": 1.97,
+              "code_ms": 3.6960000000000006,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 5.961791000117955,
+              "server_ms": 5.53,
+              "sql_ms": 1.925,
+              "code_ms": 3.6050000000000004,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 5.963624999822059,
+              "server_ms": 5.557,
+              "sql_ms": 1.937,
+              "code_ms": 3.62,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 5.908291999730864,
+              "server_ms": 5.494,
+              "sql_ms": 1.891,
+              "code_ms": 3.6029999999999998,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 5.942415999925288,
+              "server_ms": 5.498,
+              "sql_ms": 1.884,
+              "code_ms": 3.6140000000000003,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.199917000230926,
+              "server_ms": 5.757,
+              "sql_ms": 2.011,
+              "code_ms": 3.7459999999999996,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.105707999267906,
+              "server_ms": 5.682,
+              "sql_ms": 1.988,
+              "code_ms": 3.6940000000000004,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.1276669994185795,
+              "server_ms": 5.663,
+              "sql_ms": 2.013,
+              "code_ms": 3.6500000000000004,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.2524170007236535,
+              "server_ms": 5.754,
+              "sql_ms": 2.0,
+              "code_ms": 3.7539999999999996,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.23687500046799,
+              "server_ms": 5.719,
+              "sql_ms": 1.905,
+              "code_ms": 3.814,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.1119579995647655,
+              "server_ms": 5.658,
+              "sql_ms": 1.987,
+              "code_ms": 3.6710000000000003,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.1116249999031425,
+              "server_ms": 5.651,
+              "sql_ms": 1.927,
+              "code_ms": 3.7239999999999998,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.344458000057784,
+              "server_ms": 5.827,
+              "sql_ms": 2.041,
+              "code_ms": 3.786,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 5.9606670001812745,
+              "server_ms": 5.48,
+              "sql_ms": 1.851,
+              "code_ms": 3.6290000000000004,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.323333999716851,
+              "server_ms": 5.697,
+              "sql_ms": 1.991,
+              "code_ms": 3.706,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.048166999789828,
+              "server_ms": 5.55,
+              "sql_ms": 1.952,
+              "code_ms": 3.598,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.498624999949243,
+              "server_ms": 5.974,
+              "sql_ms": 1.954,
+              "code_ms": 4.0200000000000005,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.521207999867329,
+              "server_ms": 5.993,
+              "sql_ms": 2.126,
+              "code_ms": 3.8670000000000004,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.2387090001720935,
+              "server_ms": 5.734,
+              "sql_ms": 1.995,
+              "code_ms": 3.739,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.188832999214355,
+              "server_ms": 5.721,
+              "sql_ms": 1.953,
+              "code_ms": 3.768,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.196790999638324,
+              "server_ms": 5.743,
+              "sql_ms": 1.986,
+              "code_ms": 3.7570000000000006,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.181541999467299,
+              "server_ms": 5.626,
+              "sql_ms": 1.943,
+              "code_ms": 3.6830000000000003,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.099790999542165,
+              "server_ms": 5.628,
+              "sql_ms": 1.941,
+              "code_ms": 3.6870000000000003,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.415500000002794,
+              "server_ms": 5.913,
+              "sql_ms": 1.974,
+              "code_ms": 3.939,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 6.143499999780033,
+              "server_ms": 5.689,
+              "sql_ms": 1.985,
+              "code_ms": 3.7039999999999997,
+              "queries": 3,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 6.12612499980969,
+            "p95": 6.498624999949243,
+            "max": 6.521207999867329
+          },
+          "server_ms": {
+            "p50": 5.678000000000001,
+            "p95": 5.974,
+            "max": 5.993
+          },
+          "sql_ms": {
+            "p50": 1.9685000000000001,
+            "p95": 2.083,
+            "max": 2.126
+          },
+          "code_ms": {
+            "p50": 3.6950000000000003,
+            "p95": 3.939,
+            "max": 4.0200000000000005
+          },
+          "queries": {
+            "p50": 3.0,
+            "p95": 3,
+            "max": 3
+          }
+        },
+        "card": {
+          "method": "GET",
+          "path": "/api/appointments/2",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 5.064874999334279,
+              "server_ms": 4.643,
+              "sql_ms": 1.425,
+              "code_ms": 3.218,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.191999999624386,
+              "server_ms": 4.654,
+              "sql_ms": 1.358,
+              "code_ms": 3.296,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.16799999968498,
+              "server_ms": 4.709,
+              "sql_ms": 1.395,
+              "code_ms": 3.3139999999999996,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.1186660002713325,
+              "server_ms": 4.678,
+              "sql_ms": 1.391,
+              "code_ms": 3.287,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.2872499991281074,
+              "server_ms": 4.818,
+              "sql_ms": 1.492,
+              "code_ms": 3.3259999999999996,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.20441699973162,
+              "server_ms": 4.718,
+              "sql_ms": 1.403,
+              "code_ms": 3.315,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.083000000013271,
+              "server_ms": 4.586,
+              "sql_ms": 1.36,
+              "code_ms": 3.226,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.278790999909688,
+              "server_ms": 4.723,
+              "sql_ms": 1.365,
+              "code_ms": 3.3579999999999997,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.212000000028638,
+              "server_ms": 4.753,
+              "sql_ms": 1.445,
+              "code_ms": 3.308,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.165458000192302,
+              "server_ms": 4.722,
+              "sql_ms": 1.412,
+              "code_ms": 3.3100000000000005,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.189583999708702,
+              "server_ms": 4.737,
+              "sql_ms": 1.392,
+              "code_ms": 3.345,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.121791999954439,
+              "server_ms": 4.67,
+              "sql_ms": 1.371,
+              "code_ms": 3.299,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.171042000256421,
+              "server_ms": 4.676,
+              "sql_ms": 1.34,
+              "code_ms": 3.3360000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.148082999767212,
+              "server_ms": 4.72,
+              "sql_ms": 1.401,
+              "code_ms": 3.319,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.955375000463391,
+              "server_ms": 4.517,
+              "sql_ms": 1.325,
+              "code_ms": 3.192,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.111208000016632,
+              "server_ms": 4.668,
+              "sql_ms": 1.374,
+              "code_ms": 3.294,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.135916000654106,
+              "server_ms": 4.674,
+              "sql_ms": 1.419,
+              "code_ms": 3.2550000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.264125000394415,
+              "server_ms": 4.811,
+              "sql_ms": 1.408,
+              "code_ms": 3.403,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.094457999803126,
+              "server_ms": 4.65,
+              "sql_ms": 1.453,
+              "code_ms": 3.197,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.441416999929061,
+              "server_ms": 4.924,
+              "sql_ms": 1.573,
+              "code_ms": 3.3510000000000004,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.17649999983405,
+              "server_ms": 4.749,
+              "sql_ms": 1.389,
+              "code_ms": 3.3599999999999994,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.180125000151747,
+              "server_ms": 4.693,
+              "sql_ms": 1.456,
+              "code_ms": 3.2369999999999997,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.3007079995950335,
+              "server_ms": 4.79,
+              "sql_ms": 1.547,
+              "code_ms": 3.2430000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.342041999938374,
+              "server_ms": 4.843,
+              "sql_ms": 1.435,
+              "code_ms": 3.408,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.08908399954089,
+              "server_ms": 5.497,
+              "sql_ms": 1.72,
+              "code_ms": 3.777,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.369249999806925,
+              "server_ms": 5.739,
+              "sql_ms": 1.784,
+              "code_ms": 3.955,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.611499999758962,
+              "server_ms": 5.072,
+              "sql_ms": 1.514,
+              "code_ms": 3.558,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.203374999837251,
+              "server_ms": 4.694,
+              "sql_ms": 1.406,
+              "code_ms": 3.2880000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.071999999927357,
+              "server_ms": 4.628,
+              "sql_ms": 1.35,
+              "code_ms": 3.278,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.174375000024156,
+              "server_ms": 4.67,
+              "sql_ms": 1.411,
+              "code_ms": 3.259,
+              "queries": 2,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 5.178312499992899,
+            "p95": 6.08908399954089,
+            "max": 6.369249999806925
+          },
+          "server_ms": {
+            "p50": 4.7135,
+            "p95": 5.497,
+            "max": 5.739
+          },
+          "sql_ms": {
+            "p50": 1.407,
+            "p95": 1.72,
+            "max": 1.784
+          },
+          "code_ms": {
+            "p50": 3.309,
+            "p95": 3.777,
+            "max": 3.955
+          },
+          "queries": {
+            "p50": 2.0,
+            "p95": 2,
+            "max": 2
+          }
+        },
+        "slots": {
+          "method": "GET",
+          "path": "/api/slots?service_id=1&from_at=2026-10-01T00%3A00%3A00%2B03%3A00&to_at=2026-10-08T00%3A00%3A00%2B03%3A00&page=1&size=20",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 6.856958000753366,
+              "server_ms": 6.398,
+              "sql_ms": 2.982,
+              "code_ms": 3.4159999999999995,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.832999999460299,
+              "server_ms": 6.378,
+              "sql_ms": 2.977,
+              "code_ms": 3.4010000000000002,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.869916999676207,
+              "server_ms": 6.415,
+              "sql_ms": 3.004,
+              "code_ms": 3.411,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.897207999827515,
+              "server_ms": 6.418,
+              "sql_ms": 3.018,
+              "code_ms": 3.4000000000000004,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.924000000253727,
+              "server_ms": 6.498,
+              "sql_ms": 3.013,
+              "code_ms": 3.4850000000000003,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.844749999800115,
+              "server_ms": 6.406,
+              "sql_ms": 2.992,
+              "code_ms": 3.4139999999999997,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.772583000383747,
+              "server_ms": 6.326,
+              "sql_ms": 2.949,
+              "code_ms": 3.377,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.823541999438021,
+              "server_ms": 6.413,
+              "sql_ms": 3.027,
+              "code_ms": 3.386,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.793999999899825,
+              "server_ms": 6.354,
+              "sql_ms": 3.036,
+              "code_ms": 3.318,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.92404199980956,
+              "server_ms": 6.423,
+              "sql_ms": 2.981,
+              "code_ms": 3.442,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.042041000204335,
+              "server_ms": 6.561,
+              "sql_ms": 3.066,
+              "code_ms": 3.495,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.101000000147906,
+              "server_ms": 6.598,
+              "sql_ms": 3.09,
+              "code_ms": 3.508,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.053291000374884,
+              "server_ms": 6.555,
+              "sql_ms": 3.096,
+              "code_ms": 3.4589999999999996,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.9012079993626685,
+              "server_ms": 6.436,
+              "sql_ms": 3.041,
+              "code_ms": 3.395,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.892708999657771,
+              "server_ms": 6.426,
+              "sql_ms": 3.001,
+              "code_ms": 3.4250000000000003,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.90479199965921,
+              "server_ms": 6.398,
+              "sql_ms": 3.078,
+              "code_ms": 3.32,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.8977910004832665,
+              "server_ms": 6.41,
+              "sql_ms": 3.004,
+              "code_ms": 3.406,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.2609999997439445,
+              "server_ms": 6.735,
+              "sql_ms": 3.112,
+              "code_ms": 3.623,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.128124999326246,
+              "server_ms": 6.52,
+              "sql_ms": 3.043,
+              "code_ms": 3.4769999999999994,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.743584000105329,
+              "server_ms": 6.266,
+              "sql_ms": 2.923,
+              "code_ms": 3.343,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.889207999847713,
+              "server_ms": 6.412,
+              "sql_ms": 2.932,
+              "code_ms": 3.48,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.751417000486981,
+              "server_ms": 6.313,
+              "sql_ms": 2.974,
+              "code_ms": 3.3389999999999995,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.826541999544133,
+              "server_ms": 6.377,
+              "sql_ms": 3.058,
+              "code_ms": 3.319,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.825874999776715,
+              "server_ms": 6.389,
+              "sql_ms": 3.0,
+              "code_ms": 3.3890000000000002,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.746792000740243,
+              "server_ms": 6.302,
+              "sql_ms": 2.955,
+              "code_ms": 3.3469999999999995,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.676334000076167,
+              "server_ms": 6.242,
+              "sql_ms": 2.897,
+              "code_ms": 3.345,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.742208000105165,
+              "server_ms": 6.322,
+              "sql_ms": 2.948,
+              "code_ms": 3.374,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.87125000058586,
+              "server_ms": 6.402,
+              "sql_ms": 3.06,
+              "code_ms": 3.342,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.856083000457147,
+              "server_ms": 6.433,
+              "sql_ms": 3.021,
+              "code_ms": 3.412,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.722707999870181,
+              "server_ms": 6.288,
+              "sql_ms": 2.93,
+              "code_ms": 3.358,
+              "queries": 4,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 6.863437500214786,
+            "p95": 7.128124999326246,
+            "max": 7.2609999997439445
+          },
+          "server_ms": {
+            "p50": 6.4079999999999995,
+            "p95": 6.598,
+            "max": 6.735
+          },
+          "sql_ms": {
+            "p50": 3.004,
+            "p95": 3.096,
+            "max": 3.112
+          },
+          "code_ms": {
+            "p50": 3.4005,
+            "p95": 3.508,
+            "max": 3.623
+          },
+          "queries": {
+            "p50": 4.0,
+            "p95": 4,
+            "max": 4
+          }
+        },
+        "summary": {
+          "method": "GET",
+          "path": "/api/summary",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 6.763542000044254,
+              "server_ms": 6.331,
+              "sql_ms": 2.158,
+              "code_ms": 4.173,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.726459000674367,
+              "server_ms": 6.299,
+              "sql_ms": 2.096,
+              "code_ms": 4.203,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.7800409997289535,
+              "server_ms": 6.336,
+              "sql_ms": 2.136,
+              "code_ms": 4.2,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.296834000044328,
+              "server_ms": 6.816,
+              "sql_ms": 2.327,
+              "code_ms": 4.489,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.050375000289932,
+              "server_ms": 6.593,
+              "sql_ms": 2.201,
+              "code_ms": 4.3919999999999995,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.108832999620063,
+              "server_ms": 6.551,
+              "sql_ms": 2.275,
+              "code_ms": 4.276,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.242499999847496,
+              "server_ms": 6.553,
+              "sql_ms": 2.225,
+              "code_ms": 4.327999999999999,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.033041999420675,
+              "server_ms": 6.54,
+              "sql_ms": 2.231,
+              "code_ms": 4.309,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.871916000818601,
+              "server_ms": 6.377,
+              "sql_ms": 2.167,
+              "code_ms": 4.21,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.670665999990888,
+              "server_ms": 6.231,
+              "sql_ms": 2.114,
+              "code_ms": 4.117,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.696999999803666,
+              "server_ms": 6.263,
+              "sql_ms": 2.156,
+              "code_ms": 4.106999999999999,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 8.369375000256696,
+              "server_ms": 7.76,
+              "sql_ms": 2.887,
+              "code_ms": 4.872999999999999,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.787250000546919,
+              "server_ms": 7.118,
+              "sql_ms": 2.32,
+              "code_ms": 4.798,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.046333000289451,
+              "server_ms": 6.539,
+              "sql_ms": 2.196,
+              "code_ms": 4.343,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.396957999844744,
+              "server_ms": 6.772,
+              "sql_ms": 2.294,
+              "code_ms": 4.478,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 8.609999999862339,
+              "server_ms": 7.637,
+              "sql_ms": 2.347,
+              "code_ms": 5.289999999999999,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.078000000547036,
+              "server_ms": 6.568,
+              "sql_ms": 2.13,
+              "code_ms": 4.438,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.036125000013271,
+              "server_ms": 6.498,
+              "sql_ms": 2.174,
+              "code_ms": 4.324,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.176124999205058,
+              "server_ms": 6.648,
+              "sql_ms": 2.251,
+              "code_ms": 4.397,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.106208000550396,
+              "server_ms": 6.655,
+              "sql_ms": 2.314,
+              "code_ms": 4.341,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.921250000232249,
+              "server_ms": 6.38,
+              "sql_ms": 2.202,
+              "code_ms": 4.178,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.13133299996116,
+              "server_ms": 6.648,
+              "sql_ms": 2.266,
+              "code_ms": 4.382,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.00737500028481,
+              "server_ms": 6.549,
+              "sql_ms": 2.193,
+              "code_ms": 4.356,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.130500000130269,
+              "server_ms": 6.666,
+              "sql_ms": 2.265,
+              "code_ms": 4.401,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.991084000219416,
+              "server_ms": 6.525,
+              "sql_ms": 2.219,
+              "code_ms": 4.306000000000001,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.056624999677297,
+              "server_ms": 6.521,
+              "sql_ms": 2.221,
+              "code_ms": 4.3,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.078915999954916,
+              "server_ms": 6.537,
+              "sql_ms": 2.204,
+              "code_ms": 4.333,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.959916999425332,
+              "server_ms": 7.375,
+              "sql_ms": 2.543,
+              "code_ms": 4.832,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.805833000020357,
+              "server_ms": 7.201,
+              "sql_ms": 2.388,
+              "code_ms": 4.813,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.467833000191604,
+              "server_ms": 6.806,
+              "sql_ms": 2.307,
+              "code_ms": 4.4990000000000006,
+              "queries": 4,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 7.078458000250976,
+            "p95": 8.369375000256696,
+            "max": 8.609999999862339
+          },
+          "server_ms": {
+            "p50": 6.552,
+            "p95": 7.637,
+            "max": 7.76
+          },
+          "sql_ms": {
+            "p50": 2.223,
+            "p95": 2.543,
+            "max": 2.887
+          },
+          "code_ms": {
+            "p50": 4.3420000000000005,
+            "p95": 4.872999999999999,
+            "max": 5.289999999999999
+          },
+          "queries": {
+            "p50": 4.0,
+            "p95": 4,
+            "max": 4
+          }
+        },
+        "create": {
+          "method": "POST",
+          "path": "/api/appointments",
+          "expected_status": 201,
+          "samples": [
+            {
+              "http_ms": 6.236625000383356,
+              "server_ms": 5.704,
+              "sql_ms": 2.032,
+              "code_ms": 3.6719999999999997,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 6.327375000182656,
+              "server_ms": 5.708,
+              "sql_ms": 1.943,
+              "code_ms": 3.765,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 6.297249999988708,
+              "server_ms": 5.726,
+              "sql_ms": 2.079,
+              "code_ms": 3.647,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 6.38420799987216,
+              "server_ms": 5.811,
+              "sql_ms": 2.062,
+              "code_ms": 3.749,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 6.51941700016323,
+              "server_ms": 5.933,
+              "sql_ms": 2.101,
+              "code_ms": 3.832,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 6.394457999704173,
+              "server_ms": 5.845,
+              "sql_ms": 2.067,
+              "code_ms": 3.7779999999999996,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 6.209832999957143,
+              "server_ms": 5.62,
+              "sql_ms": 2.022,
+              "code_ms": 3.5980000000000003,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 6.57958299962047,
+              "server_ms": 5.954,
+              "sql_ms": 2.015,
+              "code_ms": 3.9389999999999996,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 6.271250000281725,
+              "server_ms": 5.68,
+              "sql_ms": 1.968,
+              "code_ms": 3.7119999999999997,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 6.831540999883146,
+              "server_ms": 6.282,
+              "sql_ms": 2.183,
+              "code_ms": 4.099,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 7.1615840006415965,
+              "server_ms": 6.527,
+              "sql_ms": 2.339,
+              "code_ms": 4.188000000000001,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 6.643040999733785,
+              "server_ms": 6.049,
+              "sql_ms": 2.218,
+              "code_ms": 3.8310000000000004,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 6.351083000481594,
+              "server_ms": 5.768,
+              "sql_ms": 2.046,
+              "code_ms": 3.722,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 6.341709000480478,
+              "server_ms": 5.828,
+              "sql_ms": 2.116,
+              "code_ms": 3.712,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 6.5387920003558975,
+              "server_ms": 5.919,
+              "sql_ms": 2.158,
+              "code_ms": 3.7609999999999997,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 6.326542000351765,
+              "server_ms": 5.74,
+              "sql_ms": 2.112,
+              "code_ms": 3.628,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 6.408375000319211,
+              "server_ms": 5.723,
+              "sql_ms": 2.048,
+              "code_ms": 3.675,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 6.1424159994203364,
+              "server_ms": 5.584,
+              "sql_ms": 1.992,
+              "code_ms": 3.5919999999999996,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 6.006583000271348,
+              "server_ms": 5.508,
+              "sql_ms": 1.967,
+              "code_ms": 3.541,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 6.1564170000565355,
+              "server_ms": 5.586,
+              "sql_ms": 1.927,
+              "code_ms": 3.6590000000000003,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 5.80504200024734,
+              "server_ms": 5.308,
+              "sql_ms": 1.832,
+              "code_ms": 3.476,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 5.9388749996287515,
+              "server_ms": 5.493,
+              "sql_ms": 1.973,
+              "code_ms": 3.5200000000000005,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 5.984915999761142,
+              "server_ms": 5.393,
+              "sql_ms": 1.905,
+              "code_ms": 3.4879999999999995,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 5.894040999919525,
+              "server_ms": 5.381,
+              "sql_ms": 1.916,
+              "code_ms": 3.4650000000000003,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 5.903791000491765,
+              "server_ms": 5.405,
+              "sql_ms": 1.888,
+              "code_ms": 3.5170000000000003,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 5.99720799982606,
+              "server_ms": 5.53,
+              "sql_ms": 1.952,
+              "code_ms": 3.5780000000000003,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 5.936708999797702,
+              "server_ms": 5.335,
+              "sql_ms": 1.87,
+              "code_ms": 3.465,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 5.955624999842257,
+              "server_ms": 5.413,
+              "sql_ms": 1.953,
+              "code_ms": 3.46,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 5.9315829994375235,
+              "server_ms": 5.42,
+              "sql_ms": 1.882,
+              "code_ms": 3.5380000000000003,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 5.957833999673312,
+              "server_ms": 5.496,
+              "sql_ms": 2.03,
+              "code_ms": 3.4660000000000006,
+              "queries": 7,
+              "status": 201
+            }
+          ],
+          "http_ms": {
+            "p50": 6.25393750033254,
+            "p95": 6.831540999883146,
+            "max": 7.1615840006415965
+          },
+          "server_ms": {
+            "p50": 5.692,
+            "p95": 6.282,
+            "max": 6.527
+          },
+          "sql_ms": {
+            "p50": 2.0185,
+            "p95": 2.218,
+            "max": 2.339
+          },
+          "code_ms": {
+            "p50": 3.653,
+            "p95": 4.099,
+            "max": 4.188000000000001
+          },
+          "queries": {
+            "p50": 7.0,
+            "p95": 7,
+            "max": 7
+          }
+        },
+        "cancel": {
+          "method": "POST",
+          "path": "/api/appointments/{id}/cancel",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 5.312750000484812,
+              "server_ms": 4.844,
+              "sql_ms": 1.513,
+              "code_ms": 3.3310000000000004,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.46012500035431,
+              "server_ms": 4.979,
+              "sql_ms": 1.617,
+              "code_ms": 3.362,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.454791999909503,
+              "server_ms": 4.995,
+              "sql_ms": 1.502,
+              "code_ms": 3.4930000000000003,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.510500000127649,
+              "server_ms": 4.844,
+              "sql_ms": 1.575,
+              "code_ms": 3.269,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.4914580005061,
+              "server_ms": 5.004,
+              "sql_ms": 1.554,
+              "code_ms": 3.4499999999999993,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.778583999926923,
+              "server_ms": 5.239,
+              "sql_ms": 1.657,
+              "code_ms": 3.582,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.417166999905021,
+              "server_ms": 4.941,
+              "sql_ms": 1.571,
+              "code_ms": 3.37,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.506915999831108,
+              "server_ms": 5.015,
+              "sql_ms": 1.567,
+              "code_ms": 3.4479999999999995,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.850999999893247,
+              "server_ms": 5.318,
+              "sql_ms": 1.599,
+              "code_ms": 3.7189999999999994,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.632458000036422,
+              "server_ms": 5.113,
+              "sql_ms": 1.596,
+              "code_ms": 3.5170000000000003,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.551707999984501,
+              "server_ms": 5.051,
+              "sql_ms": 1.616,
+              "code_ms": 3.435,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.566125000768807,
+              "server_ms": 5.059,
+              "sql_ms": 1.609,
+              "code_ms": 3.45,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.5177499998535495,
+              "server_ms": 5.005,
+              "sql_ms": 1.643,
+              "code_ms": 3.362,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.462375000206521,
+              "server_ms": 4.963,
+              "sql_ms": 1.575,
+              "code_ms": 3.388,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.351333999897179,
+              "server_ms": 4.866,
+              "sql_ms": 1.567,
+              "code_ms": 3.2989999999999995,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.421750000095926,
+              "server_ms": 4.93,
+              "sql_ms": 1.494,
+              "code_ms": 3.436,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.440458000521176,
+              "server_ms": 4.968,
+              "sql_ms": 1.608,
+              "code_ms": 3.36,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.834083000081591,
+              "server_ms": 5.266,
+              "sql_ms": 1.624,
+              "code_ms": 3.642,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.55274999987887,
+              "server_ms": 5.126,
+              "sql_ms": 1.623,
+              "code_ms": 3.503,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.3820829998585396,
+              "server_ms": 4.929,
+              "sql_ms": 1.473,
+              "code_ms": 3.4560000000000004,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.716957999538863,
+              "server_ms": 5.256,
+              "sql_ms": 1.604,
+              "code_ms": 3.652,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.216083999584953,
+              "server_ms": 4.781,
+              "sql_ms": 1.554,
+              "code_ms": 3.2269999999999994,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.490791999363864,
+              "server_ms": 5.025,
+              "sql_ms": 1.614,
+              "code_ms": 3.4110000000000005,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.517708000297716,
+              "server_ms": 4.891,
+              "sql_ms": 1.477,
+              "code_ms": 3.4139999999999997,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.328917000042566,
+              "server_ms": 4.856,
+              "sql_ms": 1.528,
+              "code_ms": 3.328,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.230040999776975,
+              "server_ms": 4.782,
+              "sql_ms": 1.518,
+              "code_ms": 3.2640000000000002,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.607875000350759,
+              "server_ms": 5.151,
+              "sql_ms": 1.623,
+              "code_ms": 3.5279999999999996,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.954416000349738,
+              "server_ms": 5.374,
+              "sql_ms": 1.756,
+              "code_ms": 3.6179999999999994,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.566999999246036,
+              "server_ms": 5.068,
+              "sql_ms": 1.623,
+              "code_ms": 3.4449999999999994,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.710250000447559,
+              "server_ms": 5.189,
+              "sql_ms": 1.634,
+              "code_ms": 3.555,
+              "queries": 4,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 5.508707999979379,
+            "p95": 5.850999999893247,
+            "max": 5.954416000349738
+          },
+          "server_ms": {
+            "p50": 5.0045,
+            "p95": 5.318,
+            "max": 5.374
+          },
+          "sql_ms": {
+            "p50": 1.5975000000000001,
+            "p95": 1.657,
+            "max": 1.756
+          },
+          "code_ms": {
+            "p50": 3.4404999999999997,
+            "p95": 3.652,
+            "max": 3.7189999999999994
+          },
+          "queries": {
+            "p50": 4.0,
+            "p95": 4,
+            "max": 4
+          }
+        }
+      }
+    },
+    "work": {
+      "counts": {
+        "specialists": 200,
+        "services": 30,
+        "slots": 200000,
+        "appointments": 60000
+      },
+      "fingerprint": {
+        "specialists": "2aee555c79488436bf88a211eeb98ad2",
+        "services": "90b2b9b0e91bb901640d35d7e58e68ef",
+        "slots": "dcc5046fce3c5bf7daabdfa980b678ca",
+        "appointments": "7acab84416229f38e582478844785591"
+      },
+      "reproduced": true,
+      "final_counts": {
+        "specialists": 200,
+        "services": 30,
+        "slots": 200070,
+        "appointments": 60070
+      },
+      "write_fixture": {
+        "added_slots": 70,
+        "prepared_appointments": 35,
+        "created_during_warmup": 5,
+        "created_during_series": 30,
+        "cancelled_during_warmup": 5,
+        "cancelled_during_series": 30
+      },
+      "operations": {
+        "login": {
+          "method": "POST",
+          "path": "/api/login",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 26.5632500004358,
+              "server_ms": 26.089,
+              "sql_ms": 0.691,
+              "code_ms": 25.398,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.713666999967245,
+              "server_ms": 26.224,
+              "sql_ms": 0.707,
+              "code_ms": 25.517,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 25.851542000054906,
+              "server_ms": 25.242,
+              "sql_ms": 0.814,
+              "code_ms": 24.428,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 27.232999999796448,
+              "server_ms": 26.63,
+              "sql_ms": 0.718,
+              "code_ms": 25.912,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.557541999864043,
+              "server_ms": 25.97,
+              "sql_ms": 0.675,
+              "code_ms": 25.294999999999998,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.528000000325846,
+              "server_ms": 25.96,
+              "sql_ms": 0.772,
+              "code_ms": 25.188000000000002,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.095874999555235,
+              "server_ms": 25.448,
+              "sql_ms": 0.731,
+              "code_ms": 24.717,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.035791000140307,
+              "server_ms": 25.503,
+              "sql_ms": 0.644,
+              "code_ms": 24.859,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 25.848750000477594,
+              "server_ms": 25.304,
+              "sql_ms": 0.704,
+              "code_ms": 24.599999999999998,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.644084000508883,
+              "server_ms": 26.114,
+              "sql_ms": 0.724,
+              "code_ms": 25.39,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 28.062166000381694,
+              "server_ms": 27.44,
+              "sql_ms": 0.872,
+              "code_ms": 26.568,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 27.925833000153943,
+              "server_ms": 27.314,
+              "sql_ms": 0.867,
+              "code_ms": 26.447,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 28.800041000067722,
+              "server_ms": 27.919,
+              "sql_ms": 1.175,
+              "code_ms": 26.744,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 28.938917000232323,
+              "server_ms": 28.187,
+              "sql_ms": 1.236,
+              "code_ms": 26.951,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 30.883958999766037,
+              "server_ms": 30.105,
+              "sql_ms": 1.265,
+              "code_ms": 28.84,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 31.16291599963006,
+              "server_ms": 30.293,
+              "sql_ms": 1.325,
+              "code_ms": 28.968,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 28.861499999948137,
+              "server_ms": 28.01,
+              "sql_ms": 1.102,
+              "code_ms": 26.908,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 29.64849999989383,
+              "server_ms": 28.561,
+              "sql_ms": 0.957,
+              "code_ms": 27.604,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 29.969332999826293,
+              "server_ms": 28.993,
+              "sql_ms": 1.028,
+              "code_ms": 27.965,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 29.765290999421268,
+              "server_ms": 28.818,
+              "sql_ms": 1.052,
+              "code_ms": 27.766000000000002,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 28.20820799934154,
+              "server_ms": 27.438,
+              "sql_ms": 0.904,
+              "code_ms": 26.534,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 28.959249999388703,
+              "server_ms": 28.173,
+              "sql_ms": 1.102,
+              "code_ms": 27.070999999999998,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 28.952332999324426,
+              "server_ms": 28.168,
+              "sql_ms": 1.054,
+              "code_ms": 27.114,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 29.73737499996787,
+              "server_ms": 28.942,
+              "sql_ms": 1.162,
+              "code_ms": 27.78,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 27.2460839996711,
+              "server_ms": 26.683,
+              "sql_ms": 0.777,
+              "code_ms": 25.906,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.519042000472837,
+              "server_ms": 25.964,
+              "sql_ms": 0.686,
+              "code_ms": 25.278,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.88875000058033,
+              "server_ms": 26.253,
+              "sql_ms": 0.715,
+              "code_ms": 25.538,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.996790999874065,
+              "server_ms": 26.276,
+              "sql_ms": 0.913,
+              "code_ms": 25.363,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.709416999437963,
+              "server_ms": 26.158,
+              "sql_ms": 0.741,
+              "code_ms": 25.417,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 26.435083000251325,
+              "server_ms": 25.9,
+              "sql_ms": 0.722,
+              "code_ms": 25.177999999999997,
+              "queries": 2,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 27.239541999733774,
+            "p95": 30.883958999766037,
+            "max": 31.16291599963006
+          },
+          "server_ms": {
+            "p50": 26.6565,
+            "p95": 30.105,
+            "max": 30.293
+          },
+          "sql_ms": {
+            "p50": 0.8405,
+            "p95": 1.265,
+            "max": 1.325
+          },
+          "code_ms": {
+            "p50": 25.909,
+            "p95": 28.84,
+            "max": 28.968
+          },
+          "queries": {
+            "p50": 2.0,
+            "p95": 2,
+            "max": 2
+          }
+        },
+        "logout": {
+          "method": "POST",
+          "path": "/api/logout",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 4.735165999591118,
+              "server_ms": 4.205,
+              "sql_ms": 0.818,
+              "code_ms": 3.387,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.559125000218046,
+              "server_ms": 4.943,
+              "sql_ms": 0.991,
+              "code_ms": 3.9519999999999995,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.132625000442204,
+              "server_ms": 4.517,
+              "sql_ms": 0.926,
+              "code_ms": 3.591,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.778374999659718,
+              "server_ms": 4.211,
+              "sql_ms": 0.836,
+              "code_ms": 3.3750000000000004,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.7200830003930605,
+              "server_ms": 4.144,
+              "sql_ms": 0.855,
+              "code_ms": 3.289,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.612000000633998,
+              "server_ms": 4.131,
+              "sql_ms": 0.817,
+              "code_ms": 3.314,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.467208000278333,
+              "server_ms": 4.007,
+              "sql_ms": 0.787,
+              "code_ms": 3.2199999999999998,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.400416999487788,
+              "server_ms": 3.962,
+              "sql_ms": 0.767,
+              "code_ms": 3.1950000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.553875000055996,
+              "server_ms": 4.04,
+              "sql_ms": 0.795,
+              "code_ms": 3.245,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.3545419994188705,
+              "server_ms": 3.925,
+              "sql_ms": 0.777,
+              "code_ms": 3.1479999999999997,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.642666999643552,
+              "server_ms": 4.125,
+              "sql_ms": 0.768,
+              "code_ms": 3.357,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.885667000053218,
+              "server_ms": 4.209,
+              "sql_ms": 0.826,
+              "code_ms": 3.3829999999999996,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.608625000400934,
+              "server_ms": 4.101,
+              "sql_ms": 0.83,
+              "code_ms": 3.271,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.516500000136148,
+              "server_ms": 4.043,
+              "sql_ms": 0.84,
+              "code_ms": 3.2030000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.5725419995505945,
+              "server_ms": 4.076,
+              "sql_ms": 0.826,
+              "code_ms": 3.2499999999999996,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.4582090004041675,
+              "server_ms": 4.015,
+              "sql_ms": 0.81,
+              "code_ms": 3.2049999999999996,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.452291999768931,
+              "server_ms": 4.003,
+              "sql_ms": 0.782,
+              "code_ms": 3.221,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.522958000052313,
+              "server_ms": 4.06,
+              "sql_ms": 0.787,
+              "code_ms": 3.2729999999999997,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.524417000538961,
+              "server_ms": 4.037,
+              "sql_ms": 0.81,
+              "code_ms": 3.227,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.553875000055996,
+              "server_ms": 4.116,
+              "sql_ms": 0.811,
+              "code_ms": 3.3049999999999997,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.353166000328201,
+              "server_ms": 3.918,
+              "sql_ms": 0.763,
+              "code_ms": 3.1550000000000002,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.3595830002232105,
+              "server_ms": 3.935,
+              "sql_ms": 0.777,
+              "code_ms": 3.158,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.527707999841368,
+              "server_ms": 4.075,
+              "sql_ms": 0.827,
+              "code_ms": 3.248,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.49712499994348,
+              "server_ms": 4.004,
+              "sql_ms": 0.78,
+              "code_ms": 3.2239999999999993,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.642459000024246,
+              "server_ms": 4.108,
+              "sql_ms": 0.819,
+              "code_ms": 3.2889999999999997,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.568832999211736,
+              "server_ms": 4.089,
+              "sql_ms": 0.788,
+              "code_ms": 3.301,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.339625000488013,
+              "server_ms": 4.718,
+              "sql_ms": 0.922,
+              "code_ms": 3.796,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.959000000781089,
+              "server_ms": 4.452,
+              "sql_ms": 0.915,
+              "code_ms": 3.537,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.749292000269634,
+              "server_ms": 4.225,
+              "sql_ms": 0.831,
+              "code_ms": 3.3939999999999997,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.455207999853883,
+              "server_ms": 4.021,
+              "sql_ms": 0.815,
+              "code_ms": 3.206,
+              "queries": 2,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 4.561353999633866,
+            "p95": 5.339625000488013,
+            "max": 5.559125000218046
+          },
+          "server_ms": {
+            "p50": 4.0825,
+            "p95": 4.718,
+            "max": 4.943
+          },
+          "sql_ms": {
+            "p50": 0.816,
+            "p95": 0.926,
+            "max": 0.991
+          },
+          "code_ms": {
+            "p50": 3.272,
+            "p95": 3.796,
+            "max": 3.9519999999999995
+          },
+          "queries": {
+            "p50": 2.0,
+            "p95": 2,
+            "max": 2
+          }
+        },
+        "me": {
+          "method": "GET",
+          "path": "/api/me",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 4.347375000179454,
+              "server_ms": 3.873,
+              "sql_ms": 0.689,
+              "code_ms": 3.184,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.246999999850232,
+              "server_ms": 3.803,
+              "sql_ms": 0.707,
+              "code_ms": 3.096,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.229084000144212,
+              "server_ms": 3.777,
+              "sql_ms": 0.696,
+              "code_ms": 3.0810000000000004,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.363750000266009,
+              "server_ms": 3.852,
+              "sql_ms": 0.713,
+              "code_ms": 3.139,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.363042000477435,
+              "server_ms": 3.91,
+              "sql_ms": 0.713,
+              "code_ms": 3.197,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.345834000559989,
+              "server_ms": 3.902,
+              "sql_ms": 0.718,
+              "code_ms": 3.184,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.396000000269851,
+              "server_ms": 3.952,
+              "sql_ms": 0.718,
+              "code_ms": 3.234,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.242125000018859,
+              "server_ms": 3.861,
+              "sql_ms": 0.69,
+              "code_ms": 3.1710000000000003,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.0892910001275595,
+              "server_ms": 3.725,
+              "sql_ms": 0.702,
+              "code_ms": 3.023,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.1725000000951695,
+              "server_ms": 3.702,
+              "sql_ms": 0.67,
+              "code_ms": 3.032,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.223124999953143,
+              "server_ms": 3.806,
+              "sql_ms": 0.713,
+              "code_ms": 3.093,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.162707999967097,
+              "server_ms": 3.761,
+              "sql_ms": 0.682,
+              "code_ms": 3.079,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.266041999471781,
+              "server_ms": 3.878,
+              "sql_ms": 0.749,
+              "code_ms": 3.129,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.347541000242927,
+              "server_ms": 3.919,
+              "sql_ms": 0.739,
+              "code_ms": 3.18,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.244834000019182,
+              "server_ms": 3.841,
+              "sql_ms": 0.688,
+              "code_ms": 3.1530000000000005,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.18908299980103,
+              "server_ms": 3.796,
+              "sql_ms": 0.717,
+              "code_ms": 3.0789999999999997,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.178875000434346,
+              "server_ms": 3.772,
+              "sql_ms": 0.695,
+              "code_ms": 3.077,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.275749999578693,
+              "server_ms": 3.83,
+              "sql_ms": 0.713,
+              "code_ms": 3.117,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.301124999983585,
+              "server_ms": 3.902,
+              "sql_ms": 0.726,
+              "code_ms": 3.176,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.3994999996357365,
+              "server_ms": 3.931,
+              "sql_ms": 0.737,
+              "code_ms": 3.194,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.4122500003140885,
+              "server_ms": 3.958,
+              "sql_ms": 0.742,
+              "code_ms": 3.216,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.35624999954598,
+              "server_ms": 3.961,
+              "sql_ms": 0.721,
+              "code_ms": 3.2399999999999998,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.15504200009309,
+              "server_ms": 3.762,
+              "sql_ms": 0.703,
+              "code_ms": 3.059,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.1751249991648365,
+              "server_ms": 3.798,
+              "sql_ms": 0.704,
+              "code_ms": 3.0940000000000003,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.226208000545739,
+              "server_ms": 3.748,
+              "sql_ms": 0.654,
+              "code_ms": 3.0940000000000003,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.227166000418947,
+              "server_ms": 3.778,
+              "sql_ms": 0.695,
+              "code_ms": 3.083,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.167334000158007,
+              "server_ms": 3.685,
+              "sql_ms": 0.686,
+              "code_ms": 2.999,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.180333000476821,
+              "server_ms": 3.764,
+              "sql_ms": 0.726,
+              "code_ms": 3.038,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.187083000033454,
+              "server_ms": 3.811,
+              "sql_ms": 0.751,
+              "code_ms": 3.06,
+              "queries": 1,
+              "status": 200
+            },
+            {
+              "http_ms": 4.240250000293599,
+              "server_ms": 3.844,
+              "sql_ms": 0.734,
+              "code_ms": 3.11,
+              "queries": 1,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 4.241187500156229,
+            "p95": 4.3994999996357365,
+            "max": 4.4122500003140885
+          },
+          "server_ms": {
+            "p50": 3.8205,
+            "p95": 3.958,
+            "max": 3.961
+          },
+          "sql_ms": {
+            "p50": 0.713,
+            "p95": 0.749,
+            "max": 0.751
+          },
+          "code_ms": {
+            "p50": 3.1029999999999998,
+            "p95": 3.234,
+            "max": 3.2399999999999998
+          },
+          "queries": {
+            "p50": 1.0,
+            "p95": 1,
+            "max": 1
+          }
+        },
+        "services": {
+          "method": "GET",
+          "path": "/api/services",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 4.4444999994084355,
+              "server_ms": 4.05,
+              "sql_ms": 0.904,
+              "code_ms": 3.146,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.546707999907085,
+              "server_ms": 4.175,
+              "sql_ms": 0.916,
+              "code_ms": 3.259,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.500791999817011,
+              "server_ms": 4.072,
+              "sql_ms": 0.907,
+              "code_ms": 3.165,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.462875000172062,
+              "server_ms": 4.05,
+              "sql_ms": 0.887,
+              "code_ms": 3.163,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.422666999744251,
+              "server_ms": 4.03,
+              "sql_ms": 0.843,
+              "code_ms": 3.1870000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.463458999452996,
+              "server_ms": 4.064,
+              "sql_ms": 0.895,
+              "code_ms": 3.169,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.461250000531436,
+              "server_ms": 4.08,
+              "sql_ms": 0.947,
+              "code_ms": 3.133,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.5861250000598375,
+              "server_ms": 4.152,
+              "sql_ms": 0.898,
+              "code_ms": 3.254,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.6685420002177125,
+              "server_ms": 4.258,
+              "sql_ms": 0.897,
+              "code_ms": 3.3609999999999998,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.447875000550994,
+              "server_ms": 4.066,
+              "sql_ms": 0.922,
+              "code_ms": 3.1439999999999997,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.489124999963678,
+              "server_ms": 4.103,
+              "sql_ms": 0.89,
+              "code_ms": 3.2129999999999996,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.593249999743421,
+              "server_ms": 4.183,
+              "sql_ms": 0.877,
+              "code_ms": 3.306,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.377499999463907,
+              "server_ms": 3.996,
+              "sql_ms": 0.878,
+              "code_ms": 3.118,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.510374999881606,
+              "server_ms": 3.907,
+              "sql_ms": 0.82,
+              "code_ms": 3.087,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.567124999994121,
+              "server_ms": 4.155,
+              "sql_ms": 0.938,
+              "code_ms": 3.2170000000000005,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.491833000429324,
+              "server_ms": 4.114,
+              "sql_ms": 0.885,
+              "code_ms": 3.229,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.375374999654014,
+              "server_ms": 3.99,
+              "sql_ms": 0.858,
+              "code_ms": 3.132,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.451042000255256,
+              "server_ms": 4.077,
+              "sql_ms": 0.875,
+              "code_ms": 3.202,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.36662499942031,
+              "server_ms": 4.005,
+              "sql_ms": 0.867,
+              "code_ms": 3.138,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.429874999914318,
+              "server_ms": 4.032,
+              "sql_ms": 0.856,
+              "code_ms": 3.176,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.4966249997742125,
+              "server_ms": 4.037,
+              "sql_ms": 0.903,
+              "code_ms": 3.134,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.420833999574825,
+              "server_ms": 4.027,
+              "sql_ms": 0.898,
+              "code_ms": 3.129,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.478249999920081,
+              "server_ms": 4.118,
+              "sql_ms": 0.868,
+              "code_ms": 3.2500000000000004,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.44241700006387,
+              "server_ms": 4.093,
+              "sql_ms": 0.891,
+              "code_ms": 3.202,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.538625000350294,
+              "server_ms": 4.123,
+              "sql_ms": 0.898,
+              "code_ms": 3.225,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.615332999492239,
+              "server_ms": 4.226,
+              "sql_ms": 0.88,
+              "code_ms": 3.346,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.438124999978754,
+              "server_ms": 4.068,
+              "sql_ms": 0.893,
+              "code_ms": 3.175,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.329000000325323,
+              "server_ms": 3.943,
+              "sql_ms": 0.847,
+              "code_ms": 3.096,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.495999999562628,
+              "server_ms": 4.092,
+              "sql_ms": 0.898,
+              "code_ms": 3.1939999999999995,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.356499999630614,
+              "server_ms": 3.972,
+              "sql_ms": 0.88,
+              "code_ms": 3.092,
+              "queries": 2,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 4.463166999812529,
+            "p95": 4.615332999492239,
+            "max": 4.6685420002177125
+          },
+          "server_ms": {
+            "p50": 4.07,
+            "p95": 4.226,
+            "max": 4.258
+          },
+          "sql_ms": {
+            "p50": 0.8905000000000001,
+            "p95": 0.938,
+            "max": 0.947
+          },
+          "code_ms": {
+            "p50": 3.1755,
+            "p95": 3.346,
+            "max": 3.3609999999999998
+          },
+          "queries": {
+            "p50": 2.0,
+            "p95": 2,
+            "max": 2
+          }
+        },
+        "specialists": {
+          "method": "GET",
+          "path": "/api/specialists",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 5.833042000631394,
+              "server_ms": 5.459,
+              "sql_ms": 1.057,
+              "code_ms": 4.401999999999999,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.23249999989639,
+              "server_ms": 5.679,
+              "sql_ms": 1.136,
+              "code_ms": 4.543,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.939500000749831,
+              "server_ms": 5.464,
+              "sql_ms": 1.038,
+              "code_ms": 4.426,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.9468749996085535,
+              "server_ms": 5.519,
+              "sql_ms": 1.062,
+              "code_ms": 4.457,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.001875000038126,
+              "server_ms": 5.594,
+              "sql_ms": 1.062,
+              "code_ms": 4.532,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.038458999682916,
+              "server_ms": 5.584,
+              "sql_ms": 1.053,
+              "code_ms": 4.531,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.1178750002000015,
+              "server_ms": 5.688,
+              "sql_ms": 1.096,
+              "code_ms": 4.592,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.912749999879452,
+              "server_ms": 5.526,
+              "sql_ms": 1.052,
+              "code_ms": 4.474,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.910167000365618,
+              "server_ms": 5.464,
+              "sql_ms": 1.041,
+              "code_ms": 4.423,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.90600000032282,
+              "server_ms": 5.504,
+              "sql_ms": 1.032,
+              "code_ms": 4.4719999999999995,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.000999999741907,
+              "server_ms": 5.561,
+              "sql_ms": 1.055,
+              "code_ms": 4.506,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.837167000208865,
+              "server_ms": 5.437,
+              "sql_ms": 1.066,
+              "code_ms": 4.371,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.087457999456092,
+              "server_ms": 5.61,
+              "sql_ms": 1.118,
+              "code_ms": 4.492,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.9085419998154975,
+              "server_ms": 5.442,
+              "sql_ms": 1.054,
+              "code_ms": 4.388,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.919458000789746,
+              "server_ms": 5.506,
+              "sql_ms": 1.038,
+              "code_ms": 4.468,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.973082999844337,
+              "server_ms": 5.564,
+              "sql_ms": 1.101,
+              "code_ms": 4.463,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.895375000363856,
+              "server_ms": 5.504,
+              "sql_ms": 1.047,
+              "code_ms": 4.457,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.935416000284022,
+              "server_ms": 5.541,
+              "sql_ms": 1.071,
+              "code_ms": 4.470000000000001,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 8.448249999673862,
+              "server_ms": 7.871,
+              "sql_ms": 1.842,
+              "code_ms": 6.029,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 7.044124999993073,
+              "server_ms": 6.397,
+              "sql_ms": 1.278,
+              "code_ms": 5.119,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.295791999946232,
+              "server_ms": 5.791,
+              "sql_ms": 1.135,
+              "code_ms": 4.656000000000001,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.0507500002131565,
+              "server_ms": 5.583,
+              "sql_ms": 1.109,
+              "code_ms": 4.474,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 9.167541999886453,
+              "server_ms": 8.569,
+              "sql_ms": 1.845,
+              "code_ms": 6.724000000000001,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 7.673957999941194,
+              "server_ms": 6.951,
+              "sql_ms": 1.4,
+              "code_ms": 5.551,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.59120799991797,
+              "server_ms": 5.873,
+              "sql_ms": 1.119,
+              "code_ms": 4.7540000000000004,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.56679100029578,
+              "server_ms": 5.926,
+              "sql_ms": 1.181,
+              "code_ms": 4.745,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.500874999801454,
+              "server_ms": 5.94,
+              "sql_ms": 1.245,
+              "code_ms": 4.695,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.644541000241588,
+              "server_ms": 6.073,
+              "sql_ms": 1.235,
+              "code_ms": 4.838,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.3433750001422595,
+              "server_ms": 5.858,
+              "sql_ms": 1.15,
+              "code_ms": 4.708,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.282833999648574,
+              "server_ms": 5.822,
+              "sql_ms": 1.107,
+              "code_ms": 4.715,
+              "queries": 2,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 6.044604499948036,
+            "p95": 8.448249999673862,
+            "max": 9.167541999886453
+          },
+          "server_ms": {
+            "p50": 5.589,
+            "p95": 7.871,
+            "max": 8.569
+          },
+          "sql_ms": {
+            "p50": 1.0985,
+            "p95": 1.842,
+            "max": 1.845
+          },
+          "code_ms": {
+            "p50": 4.5184999999999995,
+            "p95": 6.029,
+            "max": 6.724000000000001
+          },
+          "queries": {
+            "p50": 2.0,
+            "p95": 2,
+            "max": 2
+          }
+        },
+        "list": {
+          "method": "GET",
+          "path": "/api/appointments?page=1&size=20",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 34.14008300023852,
+              "server_ms": 33.471,
+              "sql_ms": 29.247,
+              "code_ms": 4.223999999999997,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 34.49208400070347,
+              "server_ms": 33.844,
+              "sql_ms": 29.539,
+              "code_ms": 4.305,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 34.60262499993405,
+              "server_ms": 33.979,
+              "sql_ms": 29.736,
+              "code_ms": 4.2429999999999986,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 34.23504199963645,
+              "server_ms": 33.537,
+              "sql_ms": 29.246,
+              "code_ms": 4.291,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 34.267999999428866,
+              "server_ms": 33.593,
+              "sql_ms": 29.267,
+              "code_ms": 4.326000000000004,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 34.7182920004343,
+              "server_ms": 34.144,
+              "sql_ms": 29.865,
+              "code_ms": 4.279,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 34.21699999944394,
+              "server_ms": 33.474,
+              "sql_ms": 29.197,
+              "code_ms": 4.2769999999999975,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 34.6272909991967,
+              "server_ms": 34.002,
+              "sql_ms": 29.803,
+              "code_ms": 4.199000000000002,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 34.570166000776226,
+              "server_ms": 33.886,
+              "sql_ms": 29.464,
+              "code_ms": 4.422000000000004,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 35.75270799956343,
+              "server_ms": 35.06,
+              "sql_ms": 30.758,
+              "code_ms": 4.302000000000003,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 33.678208000310406,
+              "server_ms": 33.045,
+              "sql_ms": 28.73,
+              "code_ms": 4.315000000000001,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 35.99625000060769,
+              "server_ms": 35.41,
+              "sql_ms": 31.102,
+              "code_ms": 4.307999999999996,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 35.51187500033848,
+              "server_ms": 34.634,
+              "sql_ms": 30.113,
+              "code_ms": 4.521000000000001,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 34.19458299958933,
+              "server_ms": 33.52,
+              "sql_ms": 29.215,
+              "code_ms": 4.305000000000003,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 33.92920799979038,
+              "server_ms": 33.311,
+              "sql_ms": 29.089,
+              "code_ms": 4.222000000000001,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 36.961333000363084,
+              "server_ms": 36.305,
+              "sql_ms": 31.893,
+              "code_ms": 4.411999999999999,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 33.99433300000965,
+              "server_ms": 33.351,
+              "sql_ms": 28.915,
+              "code_ms": 4.436,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 34.339750000071945,
+              "server_ms": 33.697,
+              "sql_ms": 29.464,
+              "code_ms": 4.233000000000004,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 34.818459000234725,
+              "server_ms": 34.182,
+              "sql_ms": 29.944,
+              "code_ms": 4.238000000000003,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 35.69945799972629,
+              "server_ms": 34.922,
+              "sql_ms": 30.597,
+              "code_ms": 4.324999999999996,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 36.45958299966878,
+              "server_ms": 35.803,
+              "sql_ms": 31.375,
+              "code_ms": 4.427999999999997,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 35.88479199970607,
+              "server_ms": 35.235,
+              "sql_ms": 30.646,
+              "code_ms": 4.588999999999999,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 35.77812499952415,
+              "server_ms": 34.985,
+              "sql_ms": 30.498,
+              "code_ms": 4.486999999999998,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 34.33158300049399,
+              "server_ms": 33.658,
+              "sql_ms": 29.301,
+              "code_ms": 4.357000000000003,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 34.027041999252106,
+              "server_ms": 33.333,
+              "sql_ms": 29.055,
+              "code_ms": 4.277999999999999,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 33.74691699991672,
+              "server_ms": 33.012,
+              "sql_ms": 28.752,
+              "code_ms": 4.260000000000002,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 34.402582999973674,
+              "server_ms": 33.718,
+              "sql_ms": 29.378,
+              "code_ms": 4.340000000000003,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 33.65304199996899,
+              "server_ms": 32.967,
+              "sql_ms": 28.743,
+              "code_ms": 4.224,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 36.35300000041752,
+              "server_ms": 35.024,
+              "sql_ms": 29.484,
+              "code_ms": 5.539999999999999,
+              "queries": 3,
+              "status": 200
+            },
+            {
+              "http_ms": 39.81508299966663,
+              "server_ms": 38.109,
+              "sql_ms": 31.966,
+              "code_ms": 6.143000000000001,
+              "queries": 3,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 34.53112500073985,
+            "p95": 36.961333000363084,
+            "max": 39.81508299966663
+          },
+          "server_ms": {
+            "p50": 33.865,
+            "p95": 36.305,
+            "max": 38.109
+          },
+          "sql_ms": {
+            "p50": 29.474,
+            "p95": 31.893,
+            "max": 31.966
+          },
+          "code_ms": {
+            "p50": 4.3065,
+            "p95": 5.539999999999999,
+            "max": 6.143000000000001
+          },
+          "queries": {
+            "p50": 3.0,
+            "p95": 3,
+            "max": 3
+          }
+        },
+        "card": {
+          "method": "GET",
+          "path": "/api/appointments/2",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 6.89641600001778,
+              "server_ms": 6.099,
+              "sql_ms": 1.731,
+              "code_ms": 4.368,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.048250000276312,
+              "server_ms": 5.43,
+              "sql_ms": 1.655,
+              "code_ms": 3.7749999999999995,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.793708000055631,
+              "server_ms": 5.215,
+              "sql_ms": 1.561,
+              "code_ms": 3.654,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.66383300065354,
+              "server_ms": 5.092,
+              "sql_ms": 1.56,
+              "code_ms": 3.5319999999999996,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.881207999664184,
+              "server_ms": 5.321,
+              "sql_ms": 1.697,
+              "code_ms": 3.6239999999999997,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.786916000033671,
+              "server_ms": 5.222,
+              "sql_ms": 1.547,
+              "code_ms": 3.6750000000000007,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.647083000440034,
+              "server_ms": 5.117,
+              "sql_ms": 1.585,
+              "code_ms": 3.532,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.654124999637133,
+              "server_ms": 5.163,
+              "sql_ms": 1.576,
+              "code_ms": 3.587,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.698750000192376,
+              "server_ms": 5.143,
+              "sql_ms": 1.591,
+              "code_ms": 3.5519999999999996,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.62033300047915,
+              "server_ms": 5.113,
+              "sql_ms": 1.544,
+              "code_ms": 3.5690000000000004,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.559000000175729,
+              "server_ms": 5.064,
+              "sql_ms": 1.515,
+              "code_ms": 3.5490000000000004,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.7588749996284605,
+              "server_ms": 5.235,
+              "sql_ms": 1.608,
+              "code_ms": 3.6270000000000002,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.59104199965077,
+              "server_ms": 5.037,
+              "sql_ms": 1.505,
+              "code_ms": 3.532,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.593500000031781,
+              "server_ms": 5.124,
+              "sql_ms": 1.542,
+              "code_ms": 3.582,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.854957999872568,
+              "server_ms": 5.298,
+              "sql_ms": 1.581,
+              "code_ms": 3.717,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 6.297166999502224,
+              "server_ms": 5.701,
+              "sql_ms": 1.634,
+              "code_ms": 4.067,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.424209000011615,
+              "server_ms": 4.909,
+              "sql_ms": 1.436,
+              "code_ms": 3.473,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.168833000425366,
+              "server_ms": 4.699,
+              "sql_ms": 1.406,
+              "code_ms": 3.293,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.134457999702136,
+              "server_ms": 4.69,
+              "sql_ms": 1.486,
+              "code_ms": 3.2040000000000006,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.997416999685811,
+              "server_ms": 4.566,
+              "sql_ms": 1.382,
+              "code_ms": 3.184,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.061541999566543,
+              "server_ms": 4.625,
+              "sql_ms": 1.382,
+              "code_ms": 3.2430000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.863916999966023,
+              "server_ms": 4.445,
+              "sql_ms": 1.322,
+              "code_ms": 3.123,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.207791999964684,
+              "server_ms": 4.755,
+              "sql_ms": 1.434,
+              "code_ms": 3.3209999999999997,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.066458999863244,
+              "server_ms": 4.532,
+              "sql_ms": 1.361,
+              "code_ms": 3.1710000000000003,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.990041999917594,
+              "server_ms": 4.53,
+              "sql_ms": 1.364,
+              "code_ms": 3.1660000000000004,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.945874999975786,
+              "server_ms": 4.507,
+              "sql_ms": 1.341,
+              "code_ms": 3.1659999999999995,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.1105410002492135,
+              "server_ms": 4.626,
+              "sql_ms": 1.453,
+              "code_ms": 3.173,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.991457999494742,
+              "server_ms": 4.566,
+              "sql_ms": 1.36,
+              "code_ms": 3.2059999999999995,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 4.988666999452107,
+              "server_ms": 4.493,
+              "sql_ms": 1.3,
+              "code_ms": 3.1930000000000005,
+              "queries": 2,
+              "status": 200
+            },
+            {
+              "http_ms": 5.183708000004117,
+              "server_ms": 4.741,
+              "sql_ms": 1.459,
+              "code_ms": 3.2819999999999996,
+              "queries": 2,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 5.575020999913249,
+            "p95": 6.297166999502224,
+            "max": 6.89641600001778
+          },
+          "server_ms": {
+            "p50": 5.0504999999999995,
+            "p95": 5.701,
+            "max": 6.099
+          },
+          "sql_ms": {
+            "p50": 1.5099999999999998,
+            "p95": 1.697,
+            "max": 1.731
+          },
+          "code_ms": {
+            "p50": 3.532,
+            "p95": 4.067,
+            "max": 4.368
+          },
+          "queries": {
+            "p50": 2.0,
+            "p95": 2,
+            "max": 2
+          }
+        },
+        "slots": {
+          "method": "GET",
+          "path": "/api/slots?service_id=1&from_at=2026-10-01T00%3A00%3A00%2B03%3A00&to_at=2026-10-08T00%3A00%3A00%2B03%3A00&page=1&size=20",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 137.8419170005145,
+              "server_ms": 137.146,
+              "sql_ms": 133.171,
+              "code_ms": 3.9749999999999943,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 139.80083399928844,
+              "server_ms": 139.049,
+              "sql_ms": 134.979,
+              "code_ms": 4.069999999999993,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 137.91520799986756,
+              "server_ms": 137.229,
+              "sql_ms": 133.186,
+              "code_ms": 4.043000000000006,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 138.32416700006434,
+              "server_ms": 137.59,
+              "sql_ms": 133.481,
+              "code_ms": 4.109000000000009,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 137.59237499925803,
+              "server_ms": 136.956,
+              "sql_ms": 132.923,
+              "code_ms": 4.032999999999987,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 137.86766699922737,
+              "server_ms": 137.162,
+              "sql_ms": 133.164,
+              "code_ms": 3.998000000000019,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 139.8415000003297,
+              "server_ms": 139.175,
+              "sql_ms": 135.164,
+              "code_ms": 4.011000000000024,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 137.96424999964074,
+              "server_ms": 137.299,
+              "sql_ms": 133.338,
+              "code_ms": 3.9610000000000127,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 137.8345419998368,
+              "server_ms": 137.177,
+              "sql_ms": 133.198,
+              "code_ms": 3.978999999999985,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 139.60879200021736,
+              "server_ms": 138.861,
+              "sql_ms": 134.884,
+              "code_ms": 3.977000000000004,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 188.87487599931774,
+              "server_ms": 188.209,
+              "sql_ms": 184.104,
+              "code_ms": 4.10499999999999,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 140.50912499988044,
+              "server_ms": 139.631,
+              "sql_ms": 135.443,
+              "code_ms": 4.187999999999988,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 140.36324999960925,
+              "server_ms": 139.562,
+              "sql_ms": 135.344,
+              "code_ms": 4.218000000000018,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 141.58087499981775,
+              "server_ms": 140.902,
+              "sql_ms": 136.553,
+              "code_ms": 4.3489999999999895,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 139.13824999963254,
+              "server_ms": 138.372,
+              "sql_ms": 134.275,
+              "code_ms": 4.097000000000008,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 143.69158299996343,
+              "server_ms": 142.985,
+              "sql_ms": 138.827,
+              "code_ms": 4.1580000000000155,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 142.95704100004514,
+              "server_ms": 142.241,
+              "sql_ms": 137.819,
+              "code_ms": 4.4220000000000255,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 139.03891700010718,
+              "server_ms": 138.301,
+              "sql_ms": 134.22,
+              "code_ms": 4.080999999999989,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 137.66500000019732,
+              "server_ms": 137.004,
+              "sql_ms": 132.985,
+              "code_ms": 4.018999999999977,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 143.48387500012905,
+              "server_ms": 142.649,
+              "sql_ms": 138.403,
+              "code_ms": 4.246000000000009,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 140.82941699962248,
+              "server_ms": 140.072,
+              "sql_ms": 135.761,
+              "code_ms": 4.311000000000007,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 139.71383299940499,
+              "server_ms": 139.045,
+              "sql_ms": 134.978,
+              "code_ms": 4.066999999999979,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 139.16329099993163,
+              "server_ms": 138.402,
+              "sql_ms": 134.243,
+              "code_ms": 4.158999999999992,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 138.9515000000756,
+              "server_ms": 138.218,
+              "sql_ms": 134.041,
+              "code_ms": 4.1769999999999925,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 139.4041660005314,
+              "server_ms": 138.666,
+              "sql_ms": 134.523,
+              "code_ms": 4.143000000000001,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 139.8278750002646,
+              "server_ms": 139.133,
+              "sql_ms": 134.994,
+              "code_ms": 4.13900000000001,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 141.4476250001826,
+              "server_ms": 140.687,
+              "sql_ms": 136.632,
+              "code_ms": 4.055000000000007,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 140.8841249995021,
+              "server_ms": 140.157,
+              "sql_ms": 135.816,
+              "code_ms": 4.341000000000008,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 138.01454099939292,
+              "server_ms": 137.316,
+              "sql_ms": 133.188,
+              "code_ms": 4.128000000000014,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 138.1554170002346,
+              "server_ms": 137.449,
+              "sql_ms": 133.405,
+              "code_ms": 4.044000000000011,
+              "queries": 4,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 139.50647900037438,
+            "p95": 143.69158299996343,
+            "max": 188.87487599931774
+          },
+          "server_ms": {
+            "p50": 138.7635,
+            "p95": 142.985,
+            "max": 188.209
+          },
+          "sql_ms": {
+            "p50": 134.7035,
+            "p95": 138.827,
+            "max": 184.104
+          },
+          "code_ms": {
+            "p50": 4.100999999999999,
+            "p95": 4.3489999999999895,
+            "max": 4.4220000000000255
+          },
+          "queries": {
+            "p50": 4.0,
+            "p95": 4,
+            "max": 4
+          }
+        },
+        "summary": {
+          "method": "GET",
+          "path": "/api/summary",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 499.449334000019,
+              "server_ms": 498.715,
+              "sql_ms": 243.697,
+              "code_ms": 255.01799999999997,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 493.57024999972055,
+              "server_ms": 492.868,
+              "sql_ms": 240.987,
+              "code_ms": 251.881,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 500.1733339995553,
+              "server_ms": 499.438,
+              "sql_ms": 245.551,
+              "code_ms": 253.887,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 502.9002089995629,
+              "server_ms": 502.13,
+              "sql_ms": 242.987,
+              "code_ms": 259.14300000000003,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 502.08970899984706,
+              "server_ms": 501.382,
+              "sql_ms": 240.727,
+              "code_ms": 260.655,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 501.2674169993261,
+              "server_ms": 500.414,
+              "sql_ms": 241.959,
+              "code_ms": 258.455,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 505.94666699998925,
+              "server_ms": 505.17,
+              "sql_ms": 243.356,
+              "code_ms": 261.814,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 497.19966700013174,
+              "server_ms": 496.462,
+              "sql_ms": 241.589,
+              "code_ms": 254.873,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 500.748499999645,
+              "server_ms": 500.035,
+              "sql_ms": 242.511,
+              "code_ms": 257.524,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 503.3444580003561,
+              "server_ms": 502.549,
+              "sql_ms": 243.99,
+              "code_ms": 258.55899999999997,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 499.62775000039983,
+              "server_ms": 498.807,
+              "sql_ms": 242.319,
+              "code_ms": 256.48800000000006,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 498.84566699984134,
+              "server_ms": 498.127,
+              "sql_ms": 237.56,
+              "code_ms": 260.567,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 494.48949999987235,
+              "server_ms": 493.763,
+              "sql_ms": 239.545,
+              "code_ms": 254.218,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 494.03712500043184,
+              "server_ms": 493.308,
+              "sql_ms": 240.217,
+              "code_ms": 253.09099999999998,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 499.07900099969993,
+              "server_ms": 498.355,
+              "sql_ms": 240.398,
+              "code_ms": 257.957,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 497.7454170002602,
+              "server_ms": 497.027,
+              "sql_ms": 238.198,
+              "code_ms": 258.82899999999995,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 525.5735419996199,
+              "server_ms": 524.865,
+              "sql_ms": 242.148,
+              "code_ms": 282.717,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 495.4674580003484,
+              "server_ms": 494.734,
+              "sql_ms": 238.356,
+              "code_ms": 256.378,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 502.23300000016025,
+              "server_ms": 501.526,
+              "sql_ms": 238.696,
+              "code_ms": 262.83000000000004,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 510.5145839997931,
+              "server_ms": 509.779,
+              "sql_ms": 244.224,
+              "code_ms": 265.555,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 502.9065009994156,
+              "server_ms": 502.163,
+              "sql_ms": 245.353,
+              "code_ms": 256.81,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 499.7843759992975,
+              "server_ms": 499.047,
+              "sql_ms": 241.212,
+              "code_ms": 257.83500000000004,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 504.4265409997024,
+              "server_ms": 503.475,
+              "sql_ms": 241.298,
+              "code_ms": 262.177,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 501.20933300058823,
+              "server_ms": 500.483,
+              "sql_ms": 247.034,
+              "code_ms": 253.449,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 498.2740420000482,
+              "server_ms": 497.603,
+              "sql_ms": 241.46,
+              "code_ms": 256.14300000000003,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 490.4949170004329,
+              "server_ms": 489.777,
+              "sql_ms": 238.589,
+              "code_ms": 251.188,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 492.14041599952907,
+              "server_ms": 491.407,
+              "sql_ms": 238.706,
+              "code_ms": 252.701,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 495.09820900038903,
+              "server_ms": 494.363,
+              "sql_ms": 241.746,
+              "code_ms": 252.617,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 490.925958999469,
+              "server_ms": 490.213,
+              "sql_ms": 239.145,
+              "code_ms": 251.068,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 495.63770799977647,
+              "server_ms": 494.904,
+              "sql_ms": 240.646,
+              "code_ms": 254.258,
+              "queries": 4,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 499.5385420002094,
+            "p95": 510.5145839997931,
+            "max": 525.5735419996199
+          },
+          "server_ms": {
+            "p50": 498.76099999999997,
+            "p95": 509.779,
+            "max": 524.865
+          },
+          "sql_ms": {
+            "p50": 241.37900000000002,
+            "p95": 245.551,
+            "max": 247.034
+          },
+          "code_ms": {
+            "p50": 256.649,
+            "p95": 265.555,
+            "max": 282.717
+          },
+          "queries": {
+            "p50": 4.0,
+            "p95": 4,
+            "max": 4
+          }
+        },
+        "create": {
+          "method": "POST",
+          "path": "/api/appointments",
+          "expected_status": 201,
+          "samples": [
+            {
+              "http_ms": 9.817041999667708,
+              "server_ms": 9.164,
+              "sql_ms": 5.323,
+              "code_ms": 3.8409999999999993,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.381792000567657,
+              "server_ms": 8.794,
+              "sql_ms": 5.022,
+              "code_ms": 3.7720000000000002,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.596541000064462,
+              "server_ms": 8.998,
+              "sql_ms": 5.319,
+              "code_ms": 3.6789999999999994,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.91583300037746,
+              "server_ms": 9.334,
+              "sql_ms": 4.983,
+              "code_ms": 4.351,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.370249999847147,
+              "server_ms": 8.78,
+              "sql_ms": 5.06,
+              "code_ms": 3.7199999999999998,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.424707999642123,
+              "server_ms": 8.923,
+              "sql_ms": 5.13,
+              "code_ms": 3.793,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.233791000042402,
+              "server_ms": 8.595,
+              "sql_ms": 4.951,
+              "code_ms": 3.644000000000001,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.490792000178772,
+              "server_ms": 8.942,
+              "sql_ms": 5.123,
+              "code_ms": 3.819,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 8.983375000752858,
+              "server_ms": 8.465,
+              "sql_ms": 4.817,
+              "code_ms": 3.6479999999999997,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.802625000702392,
+              "server_ms": 8.979,
+              "sql_ms": 5.177,
+              "code_ms": 3.8019999999999996,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.464542000387155,
+              "server_ms": 8.881,
+              "sql_ms": 5.222,
+              "code_ms": 3.659,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.434707999389502,
+              "server_ms": 8.739,
+              "sql_ms": 5.136,
+              "code_ms": 3.6030000000000006,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.46408399977372,
+              "server_ms": 8.922,
+              "sql_ms": 5.04,
+              "code_ms": 3.8820000000000006,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.570750000420958,
+              "server_ms": 8.972,
+              "sql_ms": 5.277,
+              "code_ms": 3.6949999999999994,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.216957999342412,
+              "server_ms": 8.653,
+              "sql_ms": 4.939,
+              "code_ms": 3.7140000000000004,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.404250000443426,
+              "server_ms": 8.779,
+              "sql_ms": 5.187,
+              "code_ms": 3.5919999999999996,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.648291999837966,
+              "server_ms": 8.969,
+              "sql_ms": 5.185,
+              "code_ms": 3.784,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.355291000247234,
+              "server_ms": 8.738,
+              "sql_ms": 5.051,
+              "code_ms": 3.6869999999999994,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.746499999891967,
+              "server_ms": 9.145,
+              "sql_ms": 5.386,
+              "code_ms": 3.7589999999999995,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.63612500072486,
+              "server_ms": 9.019,
+              "sql_ms": 5.096,
+              "code_ms": 3.923,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.597749999556981,
+              "server_ms": 8.989,
+              "sql_ms": 5.174,
+              "code_ms": 3.8150000000000004,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.203958000398416,
+              "server_ms": 8.564,
+              "sql_ms": 4.88,
+              "code_ms": 3.684,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.653416999753972,
+              "server_ms": 8.958,
+              "sql_ms": 5.131,
+              "code_ms": 3.827,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.425624999494175,
+              "server_ms": 8.823,
+              "sql_ms": 5.016,
+              "code_ms": 3.8070000000000004,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.575000000040745,
+              "server_ms": 9.022,
+              "sql_ms": 5.076,
+              "code_ms": 3.9460000000000006,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.358749999591964,
+              "server_ms": 8.808,
+              "sql_ms": 5.046,
+              "code_ms": 3.7619999999999996,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.173082999950566,
+              "server_ms": 8.584,
+              "sql_ms": 5.038,
+              "code_ms": 3.5459999999999994,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.474916000726807,
+              "server_ms": 8.886,
+              "sql_ms": 5.141,
+              "code_ms": 3.744999999999999,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.377917000165326,
+              "server_ms": 8.74,
+              "sql_ms": 4.991,
+              "code_ms": 3.7490000000000006,
+              "queries": 7,
+              "status": 201
+            },
+            {
+              "http_ms": 9.466874999816355,
+              "server_ms": 8.897,
+              "sql_ms": 5.233,
+              "code_ms": 3.6640000000000006,
+              "queries": 7,
+              "status": 201
+            }
+          ],
+          "http_ms": {
+            "p50": 9.464313000080438,
+            "p95": 9.817041999667708,
+            "max": 9.91583300037746
+          },
+          "server_ms": {
+            "p50": 8.8915,
+            "p95": 9.164,
+            "max": 9.334
+          },
+          "sql_ms": {
+            "p50": 5.109500000000001,
+            "p95": 5.323,
+            "max": 5.386
+          },
+          "code_ms": {
+            "p50": 3.754,
+            "p95": 3.9460000000000006,
+            "max": 4.351
+          },
+          "queries": {
+            "p50": 7.0,
+            "p95": 7,
+            "max": 7
+          }
+        },
+        "cancel": {
+          "method": "POST",
+          "path": "/api/appointments/{id}/cancel",
+          "expected_status": 200,
+          "samples": [
+            {
+              "http_ms": 8.74820799981535,
+              "server_ms": 8.154,
+              "sql_ms": 3.265,
+              "code_ms": 4.888999999999999,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.146790999991936,
+              "server_ms": 5.571,
+              "sql_ms": 1.777,
+              "code_ms": 3.7939999999999996,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.679332999534381,
+              "server_ms": 5.127,
+              "sql_ms": 1.664,
+              "code_ms": 3.463,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.909624999731022,
+              "server_ms": 5.356,
+              "sql_ms": 1.821,
+              "code_ms": 3.535,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.46783299978415,
+              "server_ms": 4.949,
+              "sql_ms": 1.602,
+              "code_ms": 3.3469999999999995,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.682250000063505,
+              "server_ms": 5.146,
+              "sql_ms": 1.695,
+              "code_ms": 3.4509999999999996,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.808165999951598,
+              "server_ms": 5.312,
+              "sql_ms": 1.738,
+              "code_ms": 3.5740000000000003,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.332207999344973,
+              "server_ms": 4.873,
+              "sql_ms": 1.507,
+              "code_ms": 3.3660000000000005,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.406291999861423,
+              "server_ms": 4.943,
+              "sql_ms": 1.587,
+              "code_ms": 3.356,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.485124999722757,
+              "server_ms": 4.987,
+              "sql_ms": 1.57,
+              "code_ms": 3.417,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.676667000443558,
+              "server_ms": 5.189,
+              "sql_ms": 1.662,
+              "code_ms": 3.527,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.556916000386991,
+              "server_ms": 5.038,
+              "sql_ms": 1.548,
+              "code_ms": 3.49,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.502334000084375,
+              "server_ms": 5.0,
+              "sql_ms": 1.635,
+              "code_ms": 3.365,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.428750000646687,
+              "server_ms": 4.991,
+              "sql_ms": 1.635,
+              "code_ms": 3.356,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.063875000108965,
+              "server_ms": 5.447,
+              "sql_ms": 1.742,
+              "code_ms": 3.705,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 7.332541000323545,
+              "server_ms": 6.502,
+              "sql_ms": 1.884,
+              "code_ms": 4.618,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.304292000095302,
+              "server_ms": 5.662,
+              "sql_ms": 1.867,
+              "code_ms": 3.795,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.1777090004397905,
+              "server_ms": 5.453,
+              "sql_ms": 1.78,
+              "code_ms": 3.673,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.241041999601293,
+              "server_ms": 5.662,
+              "sql_ms": 1.776,
+              "code_ms": 3.886,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 6.64179100022011,
+              "server_ms": 5.98,
+              "sql_ms": 1.986,
+              "code_ms": 3.9940000000000007,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.8106249998672865,
+              "server_ms": 5.268,
+              "sql_ms": 1.702,
+              "code_ms": 3.566,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.911833999562077,
+              "server_ms": 5.354,
+              "sql_ms": 1.8,
+              "code_ms": 3.5540000000000003,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.875625000044238,
+              "server_ms": 5.309,
+              "sql_ms": 1.748,
+              "code_ms": 3.561,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.449790999591642,
+              "server_ms": 4.938,
+              "sql_ms": 1.55,
+              "code_ms": 3.388,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.4809579996799584,
+              "server_ms": 4.953,
+              "sql_ms": 1.606,
+              "code_ms": 3.3470000000000004,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.702333999579423,
+              "server_ms": 5.204,
+              "sql_ms": 1.658,
+              "code_ms": 3.546,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.51750000067841,
+              "server_ms": 4.997,
+              "sql_ms": 1.63,
+              "code_ms": 3.367,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.814500000269618,
+              "server_ms": 5.315,
+              "sql_ms": 1.793,
+              "code_ms": 3.5220000000000002,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.507666999619687,
+              "server_ms": 4.986,
+              "sql_ms": 1.599,
+              "code_ms": 3.3869999999999996,
+              "queries": 4,
+              "status": 200
+            },
+            {
+              "http_ms": 5.52787500055274,
+              "server_ms": 5.096,
+              "sql_ms": 1.61,
+              "code_ms": 3.4859999999999998,
+              "queries": 4,
+              "status": 200
+            }
+          ],
+          "http_ms": {
+            "p50": 5.692291999821464,
+            "p95": 7.332541000323545,
+            "max": 8.74820799981535
+          },
+          "server_ms": {
+            "p50": 5.1965,
+            "p95": 6.502,
+            "max": 8.154
+          },
+          "sql_ms": {
+            "p50": 1.6795,
+            "p95": 1.986,
+            "max": 3.265
+          },
+          "code_ms": {
+            "p50": 3.5245,
+            "p95": 4.618,
+            "max": 4.888999999999999
+          },
+          "queries": {
+            "p50": 4.0,
+            "p95": 4,
+            "max": 4
+          }
+        }
+      }
+    }
+  }
+}
