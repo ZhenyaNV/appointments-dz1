@@ -23,3 +23,8 @@ report/*.log
 
 # Assignment handout, retained locally
 /Методичка*.docx
+
+# Reports and their generator are kept locally
+/report/
+/*.docx
+/*.pdf
